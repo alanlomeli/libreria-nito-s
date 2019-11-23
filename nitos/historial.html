@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Articulos</title>
+  <link rel="shortcut icon" href="Assets/icons/logo_header.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script type="text/javascript" src="Assets/js/jquery-3.3.1.min.js"></script>
+  <script type="text/javascript" src="Assets/js/barnav.js"></script>
+
+  <!-- Bootstrap 3 -->
+  <link rel="stylesheet" type="text/css" media="screen" href="Assets/js/bootstrap/css/bootstrap.css" />
+  <style>
+    body {
+      background-color: #FFF;
+    }
+
+    .panel-style {
+      padding-top: 60px;
+    }
+
+    .panel-title {
+      text-align: center;
+    }
+
+    .btn-boton-crear,
+    .btn-boton-crear:hover,
+    .btn-boton-crear:active {
+      background-color: #fff;
+      color: white;
+      border-radius: 10%
+    }
+
+    .boton {
+      text-align: right;
+      height: 100px;
+    }
+
+    .panel-heading {
+      background: #494949;
+      color: white;
+      width: 100%;
+    }
+
+    .btn-group {
+      text-align: right;
+      font-size: 15px;
+      padding-top: 10px;
+      padding-left: 80%;
+    }
+
+    .form-group {
+      color: black;
+    }
+
+    .head {
+      text-align: center;
+      background: #494949;
+      color: white;
+    }
+
+    .mas-icon {
+      width: 20px;
+      height: 20px;
+    }
+
+    .articulo {
+      background-color: #333;
+    }
+
+    div.container-info {
+      width: 80%;
+      margin: auto;
+    }
+
+    div.foto-producto {
+      width: 25%;
+      float: left;
+    }
+
+    img.foto-producto {
+      width: 100%;
+    }
+
+    div.info-producto {
+      width: 74%;
+      float: left;
+    }
+    .tamaño{
+      width: 25%;
+      text-align: left;
+    }
+    .btn{
+      background:none;
+      text-align: left;
+      width: 35%;
+
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="insertar-barra"></div>
+
+  <div class="head">
+    <h3>
+      <strong>
+        Historial de Compras
+      </strong>
+    </h3>
+  </div>
+  <div class="container">
+    <div class="col-md-8 col-md-offset-2 panel-style">
+      <div class="panel-body">
+        <div id="historial">
+          <!-- Insertar articulos -->
+
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+  <script src="Assets/js/jquery-3.3.1.min.js"></script>
+  <script src="Assets/js/bootstrap/js/bootstrap.js"></script>
+</body>
+
+
+<script type="text/javascript">
+  var objeto;
+  const xhr = new XMLHttpRequest();
+  xhr.onload = function () {
+    console.log(this.responseText);
+    objeto = JSON.parse(this.responseText);
+
+    for (let i = 0; i < objeto.length; i++) {
+      document.getElementById("historial").innerHTML +=
+        `
+        <div class="container-info">
+            <div class="info">
+                <h3>Nombre:         ${objeto[i].nombre}</h2>
+                <h3>Cantidad:       ${objeto[i].cantidad}</h2>
+                <h3>Precio:         ${objeto[i].precio}</h2>
+                <h3>Fecha:    ${objeto[i].fecha}</h2>
+      <br>
+       <hr>
+            </div>
+        </div>
+      `;
+    }
+
+  };
+  xhr.open("POST",backendSketis+ "historial.php", true);
+  xhr.withCredentials=true;
+  xhr.send();
+
+  function borrar(i){
+    var objet;
+  const xhrd = new XMLHttpRequest();
+  xhrd.onload = function () {
+    console.log(this.responseText);
+    objet = JSON.parse(this.responseText);
+  }
+
+  var fd = new FormData();
+  fd.append("number", i);
+
+
+  xhr.open("POST", backendSketis+"borrar_articulo.php", true);
+  xhr.send(fd);
+  }
+
+  function edit(i){
+    var miId = objeto[i].nombre;
+    //alert('Seleccionaste el producto : ' + miId);
+    var fd = new FormData();
+    fd.append("number", i);
+
+
+  xhr.open("POST", backendSketis+"vistaEditarProducto.php", true);
+  xhr.send(fd);
+  }
+
+</script>
+</html>

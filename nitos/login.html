@@ -1,0 +1,103 @@
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Skaters - Login</title>
+    <link rel="shortcut icon" href="Assets/icons/logo_header.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script type="text/javascript" src="Assets/js/barnav.js"></script>
+
+    <!-- Bootstrap 3 -->
+    <link rel="stylesheet" type="text/css" media="screen" href="Assets/js/bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="login.css">
+</head>
+
+<body>
+
+
+<div id="insertar-barra"></div>
+    <div class="container">
+        <div class="col-md-8 col-md-offset-2 panel-style">
+            <div class="panel-heading">
+                <h3 class="panel-title">
+                    <strong>
+                                Inicio
+                            </strong>
+                </h3>
+            </div>
+            <div class="panel-body">
+                <form onSubmit="verificar_credenciales(event)" method="POST">
+                    <div class="form-group">
+                        <label for="nombre">Correo</label>
+                        <input type="text" name="correo" id="nombre" class="form-control" required="required">
+                    </div>
+                    <div class="form-group">
+                        <label for="contraseña">Contraseña</label>
+                        <input type="password" name="contrasena" id="contraseña" class="form-control" required="required">
+                    </div>
+                    <div class="form-group">
+                        <div class="boton-crear">
+                            <div class="boton">
+                                <button type="submit" class="boton-crear btn-sm btn-boton-crear">Ingresar</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="Creacion">
+                            <a href="index.html" style="color:black; float: left;">Regresar</a>
+                        <a href="registro.html" style="color:black">Crear cuenta</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script type="text/javascript">
+        //Verificar que no haya sesion activa, si no regresa al index al chiless
+        var respuesta;
+        const xhr = new XMLHttpRequest();
+        xhr.onload = function() {
+            respuesta = JSON.parse(this.responseText);
+            if (respuesta.success === true) {
+                //alert("Ya iniciaste sesión");
+                window.location.href = 'index.html';
+            }
+        };
+
+        xhr.open("POST", backendSketis+"verificar_sesion.php", true);
+        xhr.withCredentials = true;
+        xhr.send();
+
+        function verificar_credenciales(evento) {
+            evento.preventDefault();
+            var objeto;
+            const xhr = new XMLHttpRequest();
+            xhr.onload = function() {
+                objeto = JSON.parse(this.responseText);
+                if (objeto.success === false) {
+                    if(objeto.mensaje==="ACTIVA"){
+                        alert("Se ha encontrado una sesion activa");
+
+                    }else {
+                        alert("Verifica tus credenciales");
+                    }
+                } else {
+                    window.location.href = 'index.html';
+
+                }
+            };
+
+            var fd = new FormData();
+            fd.append("correo", document.getElementById("nombre").value);
+            fd.append("contrasena", document.getElementById("contraseña").value);
+
+
+            xhr.open("POST", backendSketis+"iniciar_sesion.php", true);
+            xhr.withCredentials = true;
+            xhr.send(fd);
+
+        }
+    </script>
+</body>
+
+</html>

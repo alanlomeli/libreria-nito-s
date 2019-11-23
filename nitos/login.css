@@ -1,0 +1,38 @@
+body{
+  background-color: #FFF;
+}
+.panel-style{
+  padding-top: 60px;
+}
+.panel-title{
+text-align: center;
+}
+.btn-boton-crear,
+.btn-boton-crear:hover,
+.btn-boton-crear:active{
+background-color:#494949;
+color: white;
+border-radius: 10%
+}
+.boton{
+text-align: right;
+}
+.panel-heading{
+  background:  #494949;
+  color: white;
+}
+.panel-body{
+text-align: left;
+border: #494949 3px solid ;
+}
+.Creacion{
+text-align: right;
+font-size: 15px;
+padding-top:  10px;
+}
+.Inicio{
+text-align: right;
+font-size: 15px;
+padding-top:  10px;
+padding-right: 30px;
+}

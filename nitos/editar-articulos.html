@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Skaters - Editar Articulos</title>
+  <link rel="shortcut icon" href="Assets/icons/logo_header.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script type="text/javascript" src="Assets/js/barnav.js"></script>
+  <!-- Bootstrap 3 -->
+    <link rel="stylesheet" type="text/css" media="screen" href="Assets/js/bootstrap/css/bootstrap.css" />
+    <style>
+        body{
+            background-color: #FFF;
+        }
+        .panel-style{
+            padding-top: 20px;
+            margin-block-end: 20px;
+        }
+        .panel-title{
+          text-align: center;
+        }
+        .btn-boton-crear,
+        .btn-boton-crear:hover,
+        .btn-boton-crear:active{
+          background-color:#494949;
+          color: white;
+          border-radius: 10%;
+        }
+        .boton{
+          text-align: right;
+        }
+        .panel-heading{
+            background:  #494949;
+            color: white;
+        }
+        .panel-body{
+          text-align: left;
+          border: #494949 3px solid ;
+        }
+        .imagen{
+          text-align: left;
+          height: 100px;
+        }
+        .btn-group{
+          text-align: right;
+          font-size: 15px;
+          padding-top: 10px;
+          padding-left: 83%;
+        }
+        .form-group{
+         color: black;
+        }
+
+        input:valid {
+        border: 1px solid green;
+        box-shadow: 0 0 1px 1px green;
+        }
+
+        .bg-4 {
+        padding-top: 10px;
+        background-color: #343434;
+        color: #ffffff;
+        }
+
+    </style>
+</head>
+<body>
+<div id="insertar-barra"></div>
+
+    <div class="container">
+        <div class="col-md-8 col-md-offset-2 panel-style">
+                  <div class="panel-heading">
+                        <h3 class="panel-title">
+                            <strong>
+                                Editar Articulo
+                            </strong>
+                        </h3>
+                  </div>
+                  <div class="panel-body">
+                        <form id="edit-articulos" enctype="multipart/form-data" action="registroProductos.php" method="post">
+                            <div class="form-group">
+                                    <label for="nombre">Nombre*</label>
+                                    <input type="text" name="nombre" placeholder="Nombre del Producto"
+                                    maxlength="50" id="nombre" class="form-control" required="required">
+                                </div>
+                                <div class="form-group">
+                                    <label for="descripcion">Descripcion*</label>
+                                    <input type="text" name="descripcion" maxlength="255"
+                                    placeholder="(MAX 255 caracteres)" id="descripcion" class="form-control" required="required">
+                                </div>
+                                <div class="form-group">
+                                    <label for="modelo">Modelo*</label>
+                                    <input type="text" name="modelo" id="modelo" maxlength="50"
+                                    placeholder="Ingresa el modelo del producto" class="form-control" required="required">
+                                </div>
+                                <div class="form-group">
+                                    <label for="cantidad">Cantidad*</label>
+                                    <input min= "1" max="99999" type="number" name="cantidad" id="cantidad" placeholder="Cantidad de productos a agregar" class="form-control" required="required">
+                                </div>
+                                <div class="form-group">
+                                    <label for="precio">Precio*</label>
+                                    <input min= "1" max="99999" type="number" name="precio" id="precio" placeholder="Precio (en MXN)" class="form-control" required="required">
+                                </div>
+
+                                <div class="form-group">
+                                  <label >Seleccionar Marca*</label>
+                                <select class="form-control" name ="marca" id="marca" required>
+                                    <option></option>
+                                    <option>Antifashion</option>
+                                    <option>Santa Cruz</option>
+                                    <option>Vans</option>
+                                    <option>Spitfire</option>
+                                    <option>Independent</option>
+                                    <option>Dexlix</option>
+                                    <option>Plan B</option>
+                                    <option>Deathwish</option>
+                                    <option>Hysteria</option>
+                                    <option>Krux</option>
+                                    <option>Vulkan</option>
+                                    <option>VEnture</option>
+                                    <option>Thunder</option>
+                                  </select>
+                                  </div>
+
+                                  <div class="form-group">
+                                    <label >Seleccionar Articulo*</label>
+                                  <select class="form-control" name="articulo" id="articulo" required>
+                                      <option></option>>
+                                      <option>Llantas</option>
+                                      <option>Trucks</option>
+                                      <option>Tablas</option>
+                                    </select>
+                                    </div>
+
+                                <div class="form-group">
+
+                                      <input type="file" name="imagenGuardada" type="file" accept="image/png, .jpeg, .jpg, image/gif" required/>
+
+                                </div>
+
+                                <div class="form-group">
+                                    <div class = "btn-group">
+                                      <input type = "submit" value = "Registrar" />
+                                    </div>
+                                </div>
+                                  
+                        </form>
+                  </div>
+            </div>
+
+        </div>
+
+        <footer class="container-fluid bg-4 text-center">
+          <p>© Skaters 2019 - Proyecto hecho por <a href="https://www.ceti.mx" target="_blank">CETI</a></p>
+        </footer>
+</body>
+<script>
+    document.getElementById("edit-articulos").action=backendSketis+"registroProductos.php";
+</script>
+
+</body>
+</html>

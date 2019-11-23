@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" type="text/css" href="barnav.css">
+    <title>Skaters - Registro</title>
+    <link rel="shortcut icon" href="Assets/icons/logo_header.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script type="text/javascript" src="Assets/js/barnav.js"></script>
+
+  <!-- Bootstrap 3 -->
+    <link rel="stylesheet" type="text/css" media="screen" href="Assets/js/bootstrap/css/bootstrap.css" />
+    <style>
+        body{
+            background-color: #FFF;
+        }
+        .panel-style{
+            padding-top: 60px;
+        }
+        .panel-title{
+          text-align: center;
+        }
+        .btn-boton-crear,
+        .btn-boton-crear:hover,
+        .btn-boton-crear:active{
+          background-color:#494949;
+          color: white;
+          border-radius: 10%
+        }
+        .boton{
+          text-align: right;
+        }
+        .panel-heading{
+            background:  #494949;
+            color: white;
+        }
+        .panel-body{
+          text-align: left;
+          border: #494949 3px solid ;
+        }
+
+        .form-group{
+          color: black;
+        }
+
+    </style>
+</head>
+<body>
+<div class="barnav"><nav>
+    <a href="registro.html">	<img  src="Assets/icons/logo.png" alt="Logo" title="Home" class="logo-barnav">
+    </a>
+    <ul>
+        <li>
+            <div class="drop-not-up">
+                <button class="drop-not-up-button" title="Inicia sesión">
+                    <a href="login.html">
+                        <img src="Assets/icons/baseline_account_circle_white_18dp.png" class="drop-not-up-icon">
+                        <h3 class="drop-not-up-name">Iniciar sesion</h3>
+                    </a>
+                </button>
+            </div>
+        </li>
+        <li class="opcion-carrito">
+            <a href="registro.html">
+                <img src="Assets/icons/baseline_shopping_cart_white_18dp.png" title = "Carrito"class="shopping-icon">
+            </a>
+        </li>
+    </ul>
+</nav>
+</div>
+
+</div>
+    <div class="container">
+        <div class="col-md-8 col-md-offset-2 panel-style">
+                  <div class="panel-heading">
+                        <h3 class="panel-title">
+                            <strong>
+                                Registro
+                            </strong>
+                        </h3>
+                  </div>
+                  <div class="panel-body">
+                        <form id="add-user" action="" method="POST">
+                            <div class="form-group">
+                                    <label for="nombre">Nombre</label>
+                                    <input type="text" name="nombre" id="nombre" placeholder="Ingresa tu nombre" input maxlength="50"
+                                    class="form-control" required="required">
+                                </div>
+                                <div class="form-group">
+                                    <label for="apellido">Apellido</label>
+                                    <input type="text" name="apellido" id="apellido" placeholder="Ingresa tu apellido" input maxlength="50"
+                                     class="form-control" required="required">
+                                </div>
+                                <div class="form-group">
+                                    <label for="correo">Correo</label>
+                                    <input type="email" name="correo" id="correo" placeholder="Ejemplo@sakters.mx" input maxlength="255"
+                                    class="form-control" required="required">
+                                </div>
+                                <div class="form-group">
+                                    <label for="contraseña">Contraseña</label>
+                                    <input type="password" name="contraseña" id="contraseña" placeholder="Crea una contraseña" input maxlength="128"
+                                    class="form-control" required="required">
+                                </div>
+                                <div class="form-group">
+                                    <label for="confirmar">Confirmar contraseña</label>
+                                    <input type="password" name="confirmar" id="confirmar" placeholder="Confirma tu contraseña" input maxlength="50"
+                                    class="form-control" required="required">
+                                </div>
+                                <div class="form-group">
+                                  <div class="boton-crear">
+                                    <div class="boton">
+                                    <button type="submit" class="boton-crear btn-sm btn-boton-crear">Crear cuenta
+                                    </button>
+                                </div>
+                                <div class="Creacion">
+                                        <a href="index.html" style="color:black; float: left;">Cancelar</a>
+                                    </div>
+                                  </div>
+                                  </div>
+                        </form>
+                  </div>
+            </div>
+
+        </div>
+<script>
+    document.getElementById("add-user").action=backendSketis+"anadirUsuario.php";
+</script>
+
+</body>
+</html>

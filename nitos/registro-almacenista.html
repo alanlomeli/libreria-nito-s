@@ -1,0 +1,119 @@
+<!-- Developer name: Jairon Landa (jaironlanda.com) -->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Skaters - Registro Almacenista</title>
+  <link rel="shortcut icon" href="Assets/icons/logo_header.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script type="text/javascript" src="Assets/js/barnav.js"></script>
+  <!-- Bootstrap 3 -->
+    <link rel="stylesheet" type="text/css" media="screen" href="Assets/js/bootstrap/css/bootstrap.css" />
+    <style>
+        body{
+            background-color: #FFF;
+        }
+        .panel-style{
+            padding-top: 60px;
+        }
+        .panel-title{
+          text-align: center;
+        }
+        .btn-boton-crear,
+        .btn-boton-crear:hover,
+        .btn-boton-crear:active{
+          background-color:#494949;
+          color: white;
+          border-radius: 10%
+        }
+        .boton{
+          text-align: right;
+        }
+        .panel-heading{
+            background:  #494949;
+            color: white;
+        }
+        .panel-body{
+          text-align: left;
+          border: #494949 3px solid ;
+        }
+        .imagen{
+          text-align: left;
+          height: 100px;
+        }
+        .btn-group{
+          text-align: right;
+          font-size: 15px;
+          padding-top: 10px;
+          padding-left: 80%;
+    }
+    .form-group{
+      color: black;
+    }
+
+    </style>
+</head>
+<body>
+<div id="insertar-barra"></div>
+
+
+    <div class="container">
+        <div class="col-md-8 col-md-offset-2 panel-style">
+                  <div class="panel-heading">
+                        <h3 class="panel-title">
+                            <strong>
+                                Registro Almacenista
+                            </strong>
+                        </h3>
+                  </div>
+                  <div class="panel-body">
+                        <form id="registrar-almacenista" action="/Skate/PHP/sketis/regAlmacenistas.php" method="post">
+                            <div class="form-group">
+                                    <label for="nombre">Nombre</label>
+                                    <input type="text" name="nombre" id="nombre" placeholder="Ingresa tu nombre" input maxlength="50"
+                                    class="form-control" required="required">
+                                </div>
+                                <div class="form-group">
+                                    <label for="apellido">Apellido</label>
+                                    <input type="text" name="apellido" id="apellido" placeholder="Ingresa tu apellido" input maxlength="50"
+                                    class="form-control" required="required">
+                                </div>
+                                <div class="form-group">
+                                    <label for="correo">Correo</label>
+                                    <input type="email" name="correo" id="correo" placeholder="Ejemplo@skaters.mx" input maxlength="255"
+                                    class="form-control" required="required">
+                                </div>
+                                <div class="form-group">
+                                    <label for="contraseña">Contraseña</label>
+                                    <input type="password" name="contraseña" id="contraseña" placeholder="Crea una contraseña" input maxlength="128"
+                                    class="form-control" required="required">
+                                </div>
+                                <div class="form-group">
+                                    <label for="confirmar">Confirmar contraseña</label>
+                                    <input type="password" name="confirmar" id="confirmar" placeholder="Confirma tu contraseña" input maxlength="50"
+                                    class="form-control" required="required">
+                                </div>
+                                <div class="form-group">
+                                  <div class="boton-crear">
+                                    <div class="boton">
+                                    <button type="submit" class="boton-crear btn-sm btn-boton-crear">Registrar</button>
+                                </div>
+                                  </div>
+                                  <div class="Creacion">
+                                      <a href="index.html" style="color:black; float: left;">Cancelar</a>
+                                  </div>
+                                </div>
+                        </form>
+                  </div>
+            </div>
+
+        </div>
+    </div>
+<script type="text/javascript">
+
+    document.getElementById("registrar-almacenista").action=backendSketis+"regAlmacenistas.php";
+
+</script>
+</body>
+</html>

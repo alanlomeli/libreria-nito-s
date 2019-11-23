@@ -1,0 +1,99 @@
+body{
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+}
+
+.barnav {
+    background-color: #333;
+    margin: 0%;
+
+}
+
+
+.logo-barnav {
+    float: left;
+    width: 150px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: #343434;
+    overflow: hidden;
+}
+
+li {
+    float: right;
+}
+
+li a {
+    display: block;
+    color: #b0b0b0!important;
+    text-align: center;
+    padding: 15px 20px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color:#4e4e4e;
+    cursor: pointer;
+}
+a{
+    text-decoration: none!important;
+}
+.drop-not-up {
+    overflow: hidden;
+
+}
+
+
+.drop-not-up-button {
+    background-color: #343434;
+    border: none;
+    padding: 0;
+    margin: 0;
+
+}
+
+.drop-not-up-content {
+    display: none;
+    position: absolute;
+    z-index: 5;
+
+}
+
+.drop-not-up-content a {
+    background-color: #333;
+    width: 220px;
+
+}
+
+.drop-not-up-icon {
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+
+}
+
+.drop-not-up-name {
+    float: right;
+    padding: 10px;
+    width: 150px;
+    height: 10px;
+    margin: 0;
+    font-size: 16px;
+
+}
+
+.drop-not-up-content a:hover {
+    background-color: rgb(78, 78, 78);
+
+    cursor: pointer;
+}
+
+.drop-not-up:hover .drop-not-up-content {
+    display: block;
+    z-index: 2!important;
+
+}
