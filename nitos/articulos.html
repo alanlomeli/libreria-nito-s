@@ -87,7 +87,7 @@
 
         div.info-producto {
             width: 74%;
-        text-align: center;
+            text-align: center;
         }
 
         .tamaño {
@@ -99,15 +99,17 @@
             background: none;
             text-align: left;
             width: 35%;
-          color:#f05827;
+            color: #f05827;
 
         }
-        #basura{
-          color:#f05827;
+
+        #basura {
+            color: #f05827;
         }
-      .editar-libro{
-      margin:10px;
-      }
+
+        .editar-libro {
+            margin: 10px;
+        }
     </style>
 </head>
 
@@ -118,7 +120,7 @@
 <div class="head">
     <h3>
         <strong>
-           editar libros
+            editar libros
         </strong>
     </h3>
 </div>
@@ -150,19 +152,22 @@
     var objeto;
     const xhr = new XMLHttpRequest();
     xhr.onload = function () {
-        console.log(this.responseText);
         objeto = JSON.parse(this.responseText);
         for (let i = 0; i < objeto.length; i++) {
             document.getElementById("insertar-articulos").innerHTML +=
                 `<div class="editar-libro">
+<br>
             <div class="foto-producto">
+            <br>
+
                 <img class="foto-producto" src="Assets/img/${objeto[i].foto}">
             </div>
             <br>
             <div class="info-producto">
-                <h3>Tipo:           ${objeto[i].tipo}</h2>
-                <h3>Nombre:         ${objeto[i].nombre}</h2>
-                <h3>Precio:         ${objeto[i].precio}</h2>
+                <h3>autor:           ${objeto[i].tipo}</h2>
+                <h3>titulo:         ${objeto[i].nombre}</h2>
+                <h3>precio:         ${objeto[i].precio}</h2>
+                <h3>stock:           ${objeto[i].cantidad}</h2>
 
           <form OnSubmit="borrar(${i})" method="POST">
 

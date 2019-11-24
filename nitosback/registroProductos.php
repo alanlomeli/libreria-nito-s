@@ -56,7 +56,7 @@ for ($i=0; $i<strlen($nombre); $i++)
   }
 }
 
-$target_path = $frontEndSketis+"Assets/bd/";
+$target_path = $frontEndSketis+"Assets/img/";
 $target_path = $target_path . basename( $_FILES['imagenGuardada']['name']);
 
     if(move_uploaded_file($_FILES['imagenGuardada']['tmp_name'], $target_path)) {
@@ -67,45 +67,34 @@ $target_path = $target_path . basename( $_FILES['imagenGuardada']['name']);
         }
 
 switch ($marca){
-    case "Antifashion":
+    case "Chapman & Hall":
         $valFK = 1;
         break;
-    case "Santa Cruz":
+    case "Bradbury and Evans":
         $valFK = 2;
         break;
-    case "Vans":
-        $valFK = 3;
-        break;
-    case "Plan B":
-        $valFK = 8;
-        break;
-    case "Spitfire":
-        $valFK = 5;
-        break;
-    case "Independent":
-        $valFK = 6;
-        break;
-    case "Dexlix":
-        $valFK = 4;
-        break;
-    case "Deathwish":
-        $valFK = 9;
-        break;
-    case "Hysteria":
-        $valFK = 10;
-        break;
-    case "Krux":
-        $valFK = 11;
-        break;
-    case "Vulkan":
-        $valFK = 12;
-        break;
-    case "VEnture":
-        $valFK = 13;
-        break;
-    case "Thunder":
-        $valFK = 14;
-        break;
+           case "Grupo Editorial Tomo":
+                $valFK = 3;
+                break;
+case "BackList":
+                        $valFK = 4;
+                        break;
+case "Richard Bentley":
+                        $valFK = 5;
+                        break;
+case "Espasa":
+                        $valFK = 6;
+                        break;
+case "Alianza Editorial":
+                        $valFK = 7;
+                        break;
+case "Diana":
+                        $valFK = 8;
+                        break;
+case "DeBolsillo":
+                        $valFK = 9;
+                        break;
+
 }
 
 switch ($articulo){

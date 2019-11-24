@@ -104,7 +104,6 @@ if (isset($_POST["delete"]) )
   $datos["articulo"] = $_SESSION["articulo"];
   $datos["id"] = $_SESSION["id"];
   setcookie("datos",json_encode($datos),time()+(24*60*60));
-
   $total = $_SESSION["total"];
   print '{"Total":"'.$total.'"}';
 ?>

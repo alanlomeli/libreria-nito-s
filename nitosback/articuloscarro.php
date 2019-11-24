@@ -1,5 +1,6 @@
 <?PHP
 include 'conexion.php';
+
 if(isset($_COOKIE["datos"])){
   $datos = json_decode($_COOKIE["datos"], true);
   if(isset($datos["cantidad"]))
@@ -11,6 +12,7 @@ if(isset($_COOKIE["datos"])){
   $_SESSION["articulo"] = $datos["articulo"];
   $_SESSION["id"] = $datos["id"];
 }
+
 $_SESSION["envio"] = array();
 if(isset($_SESSION["articulo"])){
 $consulta = mysqli_query($conexion,'SELECT

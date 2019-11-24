@@ -60,8 +60,17 @@
             color: #ffffff;
         }
 
-        #botoncrear {
+        .botoncrear {
             background-color: #000000;
+            border: 1px solid green;
+
+        }
+        #btnregresar{
+            border: 1px solid green;
+            padding: 5px;
+        }
+        a{
+            color: #faaf18;
         }
     </style>
 </head>
@@ -73,7 +82,7 @@
         <div class="panel-heading">
             <h3 class="panel-title">
                 <strong>
-                    cambiando libro
+                    editando libro
                 </strong>
             </h3>
         </div>
@@ -82,71 +91,42 @@
                   action="/Skate/PHP/sketis/editarProducto.php" method="post">
 
                 <div class="form-group">
-                    <label for="nombre">PK</label>
-                    <input type="text" name="id" placeholder="ID"
+                    <input type="hidden" name="id" placeholder="ID"
 
                            maxlength="50" id="id" class="form-control" required="required">
                 </div>
 
                 <div class="form-group">
-                    <label for="nombre">Nombre*</label>
-                    <input type="text" name="nombre" placeholder="Nombre del Producto"
-                           maxlength="50" id="nombre" class="form-control" required="required">
+                    <label for="nombre">nombre del libro</label>
+                    <input  name="nombre" placeholder="nombre del libro"
+                           maxlength="50" id="nombre" class="form-control" disabled>
                 </div>
 
                 <div class="form-group">
-                    <label for="descripcion">Descripcion*</label>
+                    <label for="descripcion">descripcion del libro</label>
                     <input type="text" name="descripcion" maxlength="255"
-                           placeholder="(MAX 255 caracteres)" id="descripcion" class="form-control" required="required">
+                           placeholder="descripcion del  libro" id="descripcion" class="form-control" disabled>
                 </div>
+
                 <div class="form-group">
-                    <label for="modelo">Modelo*</label>
-                    <input type="text" name="modelo" id="modelo" maxlength="50"
-                           placeholder="Ingresa el modelo del producto" class="form-control" required="required">
-                </div>
-                <div class="form-group">
-                    <label for="cantidad">Cantidad*</label>
+                    <label for="cantidad">stock</label>
                     <input min="1" max="99999" type="number" name="cantidad" id="cantidad"
-                           placeholder="Cantidad de productos a agregar" class="form-control" required="required">
+                           placeholder="cantidad en stock" class="form-control" required="required">
                 </div>
                 <div class="form-group">
-                    <label for="precio">Precio*</label>
-                    <input min="1" max="99999" type="number" name="precio" id="precio" placeholder="Precio (en MXN)"
+                    <label for="precio">precio</label>
+                    <input min="1" max="99999" type="number" name="precio" id="precio" placeholder="precio del libro"
                            class="form-control" required="required">
                 </div>
 
-                <div class="form-group">
-                    <label >Seleccionar Editorial*</label>
-                    <select class="form-control" name ="marca" id="marca" required>
-                        <option>Chapman & Hall</option>
-                        <option>Bradbury and Evans</option>
-                        <option>Grupo Editorial Tomo</option>
-                        <option>BackList</option>
-                        <option>Richard Bentley</option>
-                        <option>Espasa</option>
-                        <option>Alianza Editorial</option>
-                        <option>Diana</option>
-                        <option>DeBolsillo</option>
-                    </select>
-                </div>
 
-                <div class="form-group">
-                    <label >Seleccionar Autor*</label>
-                    <select class="form-control" name="articulo" id="articulo" required>
-                        <option>Gabriel Garcia Marquez</option>
-                        <option>Charles John Huffam Dickens</option>
-                    </select>
-                </div>
 
-                <div class="form-group">
-
-                    <input type="file" name="imagenGuardada" type="file" accept="image/png, .jpeg, .jpg, image/gif"/>
-
-                </div>
 
                 <div class="form-group">
                     <div class="btn-group">
-                        <input id="botoncrear" type="submit" value="editar"/>
+                      <a id="btnregresar" href="articulos.html" class="botoncrear"> <-</a>
+                        <input class="botoncrear" type="submit" value="editar"/>
+
                     </div>
                 </div>
 
@@ -156,9 +136,7 @@
 
 </div>
 
-<footer class="container-fluid bg-4 text-center">
-    <p>© Skaters 2019 - Proyecto hecho por <a href="https://www.ceti.mx" target="_blank">CETI</a></p>
-</footer>
+
 </body>
 
 <script type="text/javascript">
@@ -166,29 +144,21 @@
 
     var nombre = localStorage.getItem("nombre");
     var desc = localStorage.getItem("descripcion");
-    var mod = localStorage.getItem("modelo");
     var cant = localStorage.getItem("cantidad");
     var costo = localStorage.getItem("precio");
-    var marca = localStorage.getItem("marca");
     var tipo = localStorage.getItem("tipo");
     var id = localStorage.getItem("id");
 
     document.getElementById('nombre').value = nombre;
     document.getElementById('descripcion').value = desc;
-    document.getElementById('modelo').value = mod;
     document.getElementById('cantidad').value = cant;
     document.getElementById('precio').value = costo;
-    document.getElementById('marca').value = marca;
-    document.getElementById('articulo').value = tipo;
     document.getElementById('id').value = id;
 
     localStorage.removeItem("nombre");
     localStorage.removeItem("descripcion");
-    localStorage.removeItem("modelo");
     localStorage.removeItem("cantidad");
     localStorage.removeItem("precio");
-    localStorage.removeItem("marca");
-    localStorage.removeItem("articulo");
     localStorage.removeItem("id");
 
 </script>

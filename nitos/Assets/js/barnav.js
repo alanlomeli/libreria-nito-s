@@ -17,7 +17,7 @@ peticionBarnav.onload = function () {
 peticionVerificarSesion.onload = function () {
   respuestaVerificarSesion=JSON.parse(this.responseText);
   if (respuestaVerificarSesion.success === true) {
-    document.getElementById("nombre-persona").innerHTML = `${respuestaVerificarSesion.nombre}`;
+    document.getElementById("nombre-persona").innerHTML = `Bienvenid@ ${respuestaVerificarSesion.nombre}`;
 
     if (respuestaVerificarSesion.tipo === 2) {
       document.getElementById("menu-personalizado").innerHTML = `
