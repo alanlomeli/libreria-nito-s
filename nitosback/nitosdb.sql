@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 24, 2019 at 07:21 PM
+-- Generation Time: Nov 24, 2019 at 07:55 PM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.3.10
 
@@ -31,16 +31,17 @@ SET time_zone = "+00:00";
 CREATE TABLE `articulo` (
   `Articulo_ID` int(11) NOT NULL,
   `Nombre` varchar(30) NOT NULL,
-  `Descripcion` varchar(255) NOT NULL
+  `Descripcion` longtext NOT NULL,
+  `Foto` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `articulo`
 --
 
-INSERT INTO `articulo` (`Articulo_ID`, `Nombre`, `Descripcion`) VALUES
-(1, 'Gabriel Garcia Marquez', 'Gabriel José de la Concordia García Márquez (Aracataca, Magdalena, 6 de marzo de 1927 Ciudad de México, 17 de abril de 2014)  fue un escritor, guionista, editor y periodista colombiano. En 1982 recibió el Premio Nobel de Literatura. Entre sus principales '),
-(2, 'Charles John Huffam Dickens', 'Charles John Huffam Dickens (Portsmouth, 7 de febrero de 1812-Gads Hill Place, 9 de junio de 1870) fue un escritor y novelista inglés, uno de los más reconocidos de la literatura universal, y el más sobresaliente de la época victoriana. Fue maestro del gé');
+INSERT INTO `articulo` (`Articulo_ID`, `Nombre`, `Descripcion`, `Foto`) VALUES
+(1, 'Gabriel Garcia Marquez', 'Gabriel José de la Concordia García Márquez<br>\r\n(Aracataca, Magdalena, 6 de marzo de 1927 -<br> \r\nCiudad de México, 17 de abril de 2014?)<br>\r\nfue un escritor, guionista, editor y <br>\r\nperiodista colombiano. En 1982 recibió el<br> \r\nPremio Nobel de Literatura.<br>\r\nEstá relacionado de manera inherente con<br> \r\nel realismo mágico y su obra más conocida,<br> \r\nla novela Cien años de soledad, <br>\r\nes considerada una de las más representativas <br>\r\nde este movimiento literario, e incluso se <br>\r\nconsidera que por el éxito de la <br>\r\nnovela es que tal término se aplica a la <br>\r\nliteratura surgida a partir de los años 1960 <br>\r\nen América Latina. <br>\r\n?En 2007 la Real Academia Española y la <br>\r\nAsociación de Academias de la Lengua Española <br>\r\npublicaron una edición popular <br>\r\nconmemorativa de esta obra, por considerarla <br>\r\nparte de los grandes clásicos hispánicos de <br>\r\ntodos los tiempos.<br>', 'garcia_marquez.jpg'),
+(2, 'Charles John Huffam Dickens', 'Charles John Huffam Dickens (Portsmouth, 7 de febrero de 1812-Gads Hill Place, 9 de junio de 1870) fue un escritor y novelista inglés, uno de los más reconocidos de la literatura universal, y el más sobresaliente de la época victoriana. Fue maestro del gé', 'autores.jpeg');
 
 -- --------------------------------------------------------
 
@@ -121,7 +122,7 @@ CREATE TABLE `producto` (
   `Nombre` varchar(50) NOT NULL,
   `Foto` varchar(255) DEFAULT NULL,
   `Modelo` varchar(50) NOT NULL,
-  `Descripcion` varchar(255) NOT NULL,
+  `Descripcion` varchar(2000) NOT NULL,
   `Precio` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
