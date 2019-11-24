@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Almacenistas</title>
+    <script type="text/javascript" src="Assets/js/barnav.js"></script>
+    <link rel="shortcut icon" href="Assets/icons/logo_header.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap 3 -->
+    <link rel="stylesheet" type="text/css" media="screen" href="Assets/js/bootstrap/css/bootstrap.css" />
+    <style>
+        body{
+            background-color: #FFF;
+        }
+        .panel-style{
+            padding-top: 60px;
+        }
+        .panel-title{
+            text-align: center;
+        }
+        .btn-boton-crear,
+        .btn-boton-crear:hover,
+        .btn-boton-crear:active{
+            background-color:#fff;
+            color: white;
+            border-radius: 10%
+        }
+        .boton{
+            text-align: right;
+            height: 100px;
+        }
+        .panel-heading{
+            background:  #494949;
+            color: white;
+            width:100%;
+        }
+        .btn-group{
+            text-align: right;
+            font-size: 15px;
+            padding-top: 10px;
+            padding-left: 80%;
+        }
+        .form-group{
+            color: black;
+        }
+        .head{
+            text-align: center;
+            background:#494949;
+            color:white;
+        }
+        .mas-icon{
+            width: 20px;
+            height: 20px;
+        }
+
+    </style>
+</head>
+<body id="hideme">
+<div id="insertar-barra"></div>
+<div class="head">
+    <h3>
+        <strong>
+            Próximos eventos
+        </strong>
+    </h3>
+</div>
+<div class="container">
+    <div class="col-md-8 col-md-offset-2 panel-style">
+        <div class="panel-body">
+
+            <!--<div class="boton-crear">
+                <div  class="boton">
+                </div>
+                <a href="registro-almacenista.html">
+                    Agregar almacenistas
+                    <img src="Assets/icons/icono_mas.png" class="mas-icon" id="agregar">
+                </a>
+            </div>-->
+            <!--Aqui llega el script-->
+            <div id="eventos"></div>
+            <!--Aqui se acabaxd-->
+        </div>
+
+
+
+
+
+    </div>
+</div>
+
+<script type="text/javascript">
+    var objeto;
+    const xhr=new XMLHttpRequest();
+    xhr.onload=function()
+    {
+        objeto=JSON.parse(this.responseText);
+
+        for(let i=0; i<objeto.length;i++) {
+            document.getElementById("eventos").innerHTML +=
+                `
+
+                <strong style="font-family: 'Arial Rounded MT Bold'; font-size: 25px" >${objeto[i].Titulo}</strong>
+                <p><strong style="color: #ff7018; font-size: 16px">Fecha:</strong> ${objeto[i].Fecha}  <strong style="color: #ff7018; font-size: 16px">Hora:</strong> ${objeto[i].Hora}</p>
+                <strong style="color: #ff7018; font-size: 16px">Descripción:</strong>
+                <p>${objeto[i].Descripcion}</p>
+
+         `;
+        }
+    };
+
+    xhr.open("GET", backendSketis+"view_eventos.php",true);
+    xhr.send();
+
+</script>
+</body>
+</html>

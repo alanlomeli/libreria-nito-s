@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Skaters - Registro Articulos</title>
+    <link rel="shortcut icon" href="Assets/icons/logo_header.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="Assets/js/barnav.js"></script>
+    <!-- Bootstrap 3 -->
+    <link rel="stylesheet" type="text/css" media="screen" href="Assets/js/bootstrap/css/bootstrap.css" />
+    <style>
+        body{
+            background-color: #FFF;
+        }
+        .panel-style{
+            padding-top: 20px;
+            margin-block-end: 20px;
+        }
+        .panel-title{
+            text-align: center;
+        }
+        .btn-boton-crear,
+        .btn-boton-crear:hover,
+        .btn-boton-crear:active{
+            background-color:#494949;
+            color: white;
+            border-radius: 10%;
+        }
+        .boton{
+            text-align: right;
+        }
+        .panel-heading{
+            background:  #494949;
+            color: white;
+        }
+        .panel-body{
+            text-align: left;
+            border: #494949 3px solid ;
+        }
+        .imagen{
+            text-align: left;
+            height: 100px;
+        }
+        .btn-group{
+            text-align: right;
+            font-size: 15px;
+            padding-top: 10px;
+            padding-left: 83%;
+        }
+        .form-group{
+            color: black;
+        }
+
+        input:valid {
+            border: 1px solid green;
+            box-shadow: 0 0 1px 1px green;
+        }
+
+        .bg-4 {
+            padding-top: 10px;
+            background-color: #343434;
+            color: #ffffff;
+        }
+
+    </style>
+</head>
+<body>
+<div id="insertar-barra"></div>
+
+<div class="container">
+    <div class="col-md-8 col-md-offset-2 panel-style">
+        <div class="panel-heading">
+            <h3 class="panel-title">
+                <strong>
+                    Crear un Evento
+                </strong>
+            </h3>
+        </div>
+        <div class="panel-body">
+            <form id="registro-eventos" enctype="multipart/form-data"
+                  action="/Skate/PHP/sketis/registroEventos.php" method="post">
+                <div class="form-group">
+                    <label for="titulo">Titulo*</label>
+                    <input type="text" name="titulo" placeholder="Nombre del Evento"
+                           maxlength="50" id="titulo" class="form-control" required="required">
+                </div>
+                <div class="form-group">
+                    <label for="descripcion">Descripcion*</label>
+                    <input type="text" name="descripcion" maxlength="255"
+                           placeholder="(MAX 500 caracteres)" id="descripcion" class="form-control" required="required">
+                </div>
+                <div class="form-group">
+                    <label for="fecha">Fecha*</label>
+                    <input type="date" name="fecha" id="fecha" class="form-control" required="required">
+                </div>
+                <div class="form-group">
+                    <label for="hora">Hora*</label>
+                    <input type="time" name="hora" id="hora" class="form-control" required="required">
+                </div>
+
+                <div class="form-group">
+                    <div class = "btn-group">
+                        <input type = "submit" value = "Crear" />
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+</div>
+
+
+</body>
+<script type="text/javascript">
+
+    document.getElementById("registro-eventos").action=backendSketis+"registroEventos.php";
+</script>
+</body>
+</html>

@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
--- http://www.phpmyadmin.net
+-- version 4.9.1
+-- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 31-10-2019 a las 19:02:59
--- Versión del servidor: 10.1.9-MariaDB
--- Versión de PHP: 5.6.15
+-- Tiempo de generación: 24-11-2019 a las 03:34:46
+-- Versión del servidor: 10.4.8-MariaDB-log
+-- Versión de PHP: 7.3.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -39,6 +41,30 @@ INSERT INTO `articulo` (`Articulo_ID`, `Nombre`) VALUES
 (1, 'Llantas'),
 (2, 'Trucks'),
 (3, 'Tablas');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `eventos`
+--
+
+CREATE TABLE `eventos` (
+  `PK_ID` int(11) NOT NULL,
+  `Fecha` date NOT NULL,
+  `Hora` time NOT NULL,
+  `Titulo` varchar(80) NOT NULL,
+  `Descripcion` varchar(500) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `eventos`
+--
+
+INSERT INTO `eventos` (`PK_ID`, `Fecha`, `Hora`, `Titulo`, `Descripcion`) VALUES
+(2, '2019-11-30', '17:30:00', 'Conferencia por Mario Vargas Llosa', 'Mario Vargas Llosa, el premio nobel de 2010, viene a deleitarnos con una plática. No te lo puedes perder.'),
+(8, '2000-03-10', '10:00:00', 'Este es un nuevo evento', 'Este evento está bien chidoris'),
+(10, '2019-11-23', '19:30:00', 'Juanpa se rifa', 'Ya quedó este pedo compas'),
+(36, '2222-12-12', '12:21:00', 'asdsa', 'asdsa');
 
 -- --------------------------------------------------------
 
@@ -169,7 +195,7 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`Usuario_ID`, `Tipo_FK`, `Nombre`, `Apellido`, `Correo`, `Contrasena`, `Ultima_Conexion`) VALUES
-(1, 2, 'Alan Jesus', 'Lomeli', 'alomeligcia@gmail.com', 'clave', 1571591567),
+(1, 2, 'Alan Jesus', 'Lomeli', 'alomeligcia@gmail.com', 'clave', 1574561420),
 (2, 1, 'Doug Dimmadomme', 'Dueño del Domodimm', 'dougdim@gmail.com', 'clave', 0),
 (3, 3, 'Jose de Jesus', 'Jimenez Jara', 'josesito@gmail.com', 'clave', 0),
 (6, 1, 'Maria', 'Jimenez', 'a16100159@ceti.mx', '123', 0),
@@ -197,6 +223,12 @@ INSERT INTO `usuario` (`Usuario_ID`, `Tipo_FK`, `Nombre`, `Apellido`, `Correo`, 
 --
 ALTER TABLE `articulo`
   ADD PRIMARY KEY (`Articulo_ID`);
+
+--
+-- Indices de la tabla `eventos`
+--
+ALTER TABLE `eventos`
+  ADD PRIMARY KEY (`PK_ID`);
 
 --
 -- Indices de la tabla `historial`
@@ -241,31 +273,43 @@ ALTER TABLE `usuario`
 --
 ALTER TABLE `articulo`
   MODIFY `Articulo_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT de la tabla `eventos`
+--
+ALTER TABLE `eventos`
+  MODIFY `PK_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+
 --
 -- AUTO_INCREMENT de la tabla `historial`
 --
 ALTER TABLE `historial`
   MODIFY `PK_historial` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT de la tabla `marca`
 --
 ALTER TABLE `marca`
   MODIFY `Marca_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+
 --
 -- AUTO_INCREMENT de la tabla `producto`
 --
 ALTER TABLE `producto`
   MODIFY `Producto_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=106;
+
 --
 -- AUTO_INCREMENT de la tabla `t_usuario`
 --
 ALTER TABLE `t_usuario`
   MODIFY `Usuario_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
 --
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
   MODIFY `Usuario_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+
 --
 -- Restricciones para tablas volcadas
 --
@@ -288,6 +332,7 @@ ALTER TABLE `producto`
 --
 ALTER TABLE `usuario`
   ADD CONSTRAINT `usuario_ibfk_1` FOREIGN KEY (`Tipo_FK`) REFERENCES `t_usuario` (`Usuario_ID`) ON DELETE CASCADE ON UPDATE CASCADE;
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

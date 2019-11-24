@@ -1,4 +1,5 @@
-var backendnitos="http://localhost/nitosback/";
+var backendnitos="http://localhost/libreria-nito-s/nitosback/";
+var backendSketis="http://localhost/libreria-nito-s/nitosback/";
 const peticionBarnav = new XMLHttpRequest();
 var respuestaVerificarSesion;
 const peticionVerificarSesion = new XMLHttpRequest();
@@ -20,8 +21,10 @@ peticionVerificarSesion.onload = function () {
 
     if (respuestaVerificarSesion.tipo === 2) {
       document.getElementById("menu-personalizado").innerHTML = `
+                  <a href="nuevoEvento.html">Crear Evento</a>
                   <a href="almacenistas.html">Almacenistas</a>
-                                    <a href="articulos.html">Articulos</a>`;
+                  <a href="articulos.html">Articulos</a>
+                  `;
       tipoCuenta = 2;
       document.getElementById("carro-opcion").innerHTML=`
                   <a href="carrito.html">

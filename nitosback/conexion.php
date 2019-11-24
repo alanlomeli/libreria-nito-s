@@ -1,7 +1,7 @@
 <?PHP
 $varHeader="http://localhost";  //Poner url del frontend sketis
 $urlBanco="http://localhost/cetipay/PHP/";
-$frontEndSketis=$varHeader."/sketis/";
+$frontEndSketis=$varHeader."/libreria-nito-s/nitos/";
 session_start();
 header("Access-Control-Allow-Origin: ".$varHeader);
 header("Access-Control-Allow-Methods: PUT, GET, POST, DELETE, UPDATE,OPTIONS");
