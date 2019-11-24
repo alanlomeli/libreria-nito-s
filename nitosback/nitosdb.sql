@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 4.9.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Nov 24, 2019 at 04:56 AM
--- Server version: 10.4.6-MariaDB-log
--- PHP Version: 7.3.9
+-- Host: 127.0.0.1
+-- Generation Time: Nov 24, 2019 at 05:42 PM
+-- Server version: 10.4.8-MariaDB
+-- PHP Version: 7.3.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -30,17 +30,17 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `articulo` (
   `Articulo_ID` int(11) NOT NULL,
-  `Nombre` varchar(30) NOT NULL
+  `Nombre` varchar(30) NOT NULL,
+  `Descripcion` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `articulo`
 --
 
-INSERT INTO `articulo` (`Articulo_ID`, `Nombre`) VALUES
-(1, 'Llantas'),
-(2, 'Trucks'),
-(3, 'Tablas');
+INSERT INTO `articulo` (`Articulo_ID`, `Nombre`, `Descripcion`) VALUES
+(1, 'Gabriel Garcia Marquez', 'Gabriel José de la Concordia García Márquez (Aracataca, Magdalena, 6 de marzo de 1927 Ciudad de México, 17 de abril de 2014)  fue un escritor, guionista, editor y periodista colombiano. En 1982 recibió el Premio Nobel de Literatura. Entre sus principales '),
+(2, 'Charles John Huffam Dickens', 'Charles John Huffam Dickens (Portsmouth, 7 de febrero de 1812-Gads Hill Place, 9 de junio de 1870) fue un escritor y novelista inglés, uno de los más reconocidos de la literatura universal, y el más sobresaliente de la época victoriana. Fue maestro del gé');
 
 -- --------------------------------------------------------
 
@@ -97,20 +97,15 @@ CREATE TABLE `marca` (
 --
 
 INSERT INTO `marca` (`Marca_ID`, `Nombre`) VALUES
-(1, 'Antifashion'),
-(2, 'Santa Cruz'),
-(3, 'Vans'),
-(4, 'Dexlix'),
-(5, 'Spitfire'),
-(6, 'Independent'),
-(7, 'Dexlix'),
-(8, 'Plan B'),
-(9, 'Deathwish'),
-(10, 'Hysteria'),
-(11, 'Krux'),
-(12, 'Vulkan'),
-(13, 'VEnture'),
-(14, 'Thunder');
+(1, 'Chapman & Hall'),
+(2, '	\r\nBradbury and Evans'),
+(3, 'Grupo Editorial Tomo'),
+(4, 'BackList'),
+(5, 'Richard Bentley'),
+(6, 'Espasa'),
+(7, 'Alianza Editorial'),
+(8, 'Diana'),
+(9, 'DeBolsillo');
 
 -- --------------------------------------------------------
 
@@ -135,24 +130,17 @@ CREATE TABLE `producto` (
 --
 
 INSERT INTO `producto` (`Producto_ID`, `Marca_FK`, `Articulo_FK`, `Cantidad`, `Nombre`, `Foto`, `Modelo`, `Descripcion`, `Precio`) VALUES
-(1, 4, 3, 11, 'Tabla Dexlix Cocodrilo 8.5 inch', 'tabla-dexlixcoco.png', 'T-DEXCOCO85', 'Bonita tabla Dexlix color rosa de 8.5', 1000),
-(4, 7, 3, 19, 'Tabla Dexlix X THC 420 Rojo ', 'tabla-dexlixthc.png', 'THC 420', '8.4 inch', 690),
-(5, 7, 3, -1, 'Tabla Dexlix Alv coco', 'tabla-dexlixalv.png', 'ALV COCO', '8.0,8.12,8.25,8.37,8.5 inch', 570),
-(6, 8, 3, 29, 'Tabla Plan B Sheckler ', 'tabla-planbsheckler.png', 'Sheckler Hands', '8.25 inch', 890),
-(7, 9, 3, 30, 'Tabla Deathwish Skateboards Slash', 'tabla-deathwishslash.png', 'Slash', '8 inch', 949),
-(8, 8, 3, 29, 'Tabla Plan B Felipe Gustavo', 'tabla-planbfelipe.png', 'Felipe GUstavo', '8.25 inch', 890),
-(10, 5, 1, 26, 'Spitfire Chargers 80hd Azul 54mm', 'llanta-spitfirechargers.png', '80hdL', '80hd Azul 54mm', 900),
-(11, 5, 1, 27, 'Spitfire Wheels Mike Anderson 54 mm 99 duro Rosas', 'llanta-spitfiremike.png', 'Mike Anderson', '54 mm 99 duro Rosas', 800),
-(12, 5, 1, 29, 'Spitfire Wheels F4 Lock Ins Daewon 53mm', 'llanta-spitfirelocks.png', 'Lock Ins Daewon', '53mm', 950),
-(13, 5, 1, 29, 'Spitfire Wheels 80HD Chargers Green 54mm', 'llanta-spitfirechargersgreen.png', 'Chargers Green ', '54mm', 950),
-(14, 5, 1, 24, 'Spitfire Wheels 80HD Chargers Red 54mm', 'llanta-spitfirechargersred.png', 'Chargers Red', '54mm', 900),
-(15, 5, 1, 30, 'Spitfire Arson Dept 54mm', 'llanta-spitfirearson.png', 'Arson Dept', '54mm', 1000),
-(16, 10, 2, 29, 'Trucks Hysteria X Ludica', 'trucks-Hysteria-X-Ludica-Serpiente.png', 'X LUDICA', '149', 690),
-(17, 6, 2, 28, 'Trucks Independent 215', 'trucks-INDY215.png', 'Independent 215', '215', 1290),
-(18, 11, 2, -1, 'Trucks Krux Pro Nora', 'krux-k4_nora_multi_colour_trucks_8_5_standard_trucks_pro_model_nora_grande.png', ' Pro Nora', '8.0', 850),
-(19, 12, 2, 28, 'Trucks Vulkan Negro', 'vulkan-negro2.png', 'VK-blc', '8.5', 590),
-(20, 13, 2, 25, 'Trucks Venture Biebel Brilliant V-Lights Low 5.0', 'Trucks-Venture-Biebel-Brilliant-V-Lights-Low.png', 'iebel Brilliant V-Lights Low', '5.0', 950),
-(21, 14, 2, 30, 'Trucks Thunder Polish Team Editions 145', 'trucks-thunder-polished.png', 'Polish Team Editions', '145', 820);
+(1, 1, 2, 50, 'Grandes esperanzas', 'grandesExpectaciones1.jpg', 'SDFHGF34D', 'La novela narra la historia Phillip Pirrip, un huérfano aprendiz de herrero cuya aspiración pasará a ser convertirse en un noble caballero, describiendo su vida desde su niñez hasta su madurez. Se puede decir que se trata de un Bildungsroman o novela de a', 50),
+(2, 3, 2, 50, 'Grandes esperanzas', 'grandesEsperanzas2.jpg', 'FDS34DF', 'Kent, Inglaterra, finales del siglo XIX. El huérfano Pip vive una existencia humilde con su hermana y su cuñado, a quien ayuda en su taller de herrería. Cuando la rica Miss Havisham requiere a Pip como acompañante de ella y de su bella hija, el joven se d', 300),
+(3, 4, 2, 49, 'GRANDES ESPERANZAS', 'grandesEsperanzas3.jpg', 'FHW42D3', 'Grandes esperanzas es uno de los títulos más célebres del gran autor inglés Charles Dickens. Publicado originalmente en 1860, cuenta la historia de Pip, un joven huérfano y miedoso, cuyo humilde destino se ve favorecido por un benefactor inesperado que ca', 150),
+(4, 5, 2, 40, 'Oliver Twist', 'oliver.jpg', '34SDF56D', 'Es una historia de tinte realista, que destila crítica social, con un estilo ameno. Bajo una luz u otra, seguirán vivos muchos de sus personajes, llamarán la atención y se meterán por unos minutos, unas horas o unos días en las vidas de sus lectores.', 90),
+(5, 6, 2, 45, ' Guardar en favoritos Marcar como leído\r\n¿Te gusta', 'copperfield.jpg', 'FD45YUB3D', 'La transmutación íntima de ambos, protagonista y autor, fue compleja y sutil. Aunque ficción y realidad no siempre coinciden, las desdichas de la niñez, el trabajo en la abogacía, la condición  de escritor y varios de los personajes responden a la experie', 400),
+(6, 7, 2, 30, 'Tiempos Dificiles', 'tiemposDificiles.jpg', 'HF356NT5X', 'Tiempos difíciles se cuenta entre las obras que han valido a Charles Dickens (1812-1870) su reputación como uno de los principales autores ingleses del siglo xix. Su entretenida trama, que entremezcla las vidas y peripecias, ilusiones y desdichas del rígi', 206),
+(7, 8, 1, 10, 'Cien años de soledad', 'cienAñosDeSoledad.jpg', '35JY88L', 'Muchos años después, frente al pelotón de fusilamiento, el coronel Aureliano Buendía había de recordar aquella tarde remota en que su padre lo llevó a conocer el hielo. Macondo era entonces una aldea de veinte casas de barro y cañabrava construidas a la o', 368),
+(8, 9, 1, 25, 'Cronica de una muerte anunciada', 'cronica.jpg', '56DHJK9L', 'El día en que lo iban a matar, Santiago Nasar se levantó a las 5.30 de la mañana para esperar el buque en que llegaba el obispo.» Acaso sea Crónica de una muerte anunciada la obra más «realista» de Gabriel García Márquez, pues se basa en un hecho históric', 350),
+(9, 8, 1, 12, 'El amor en los tiempos de colera', 'amorEnTiemposDeColera.jpg', 'P09BZ5', 'Florentino Ariza... no había dejado de pensar en ella un solo instante después de que Fermina Daza lo rechazó sin apelación después de unos amores largos y contrariados, y habían transcurrido desde entonces cincuenta y un años, nueve meses y cuatro días. ', 198),
+(10, 8, 1, 77, 'El coronel no tiene Quien le escriba', 'elCoronel.jpg', '6XK39JD', 'El administrador le entregó la correspondencia. Metió el resto en el saco y lo volvió a cerrar. El médico se dispuso a leer dos cartas personales. Pero antes de romper los sobres miró al coronel. Luego miró al administrador. -¿Nada para el coronel? El cor', 238),
+(11, 8, 1, 43, 'Memoria de mis putas tristes', 'putas.jpg', '4QW9JH7', 'Un viejo periodista decide festejar sus noventa años a lo grande, dándose un regalo que le hará sentir que todavía está vivo: una jovencita virgen y con ella el principio de una nueva vida a una edad en que la mayoría de los mortales están muertos. En el ', 158);
 
 -- --------------------------------------------------------
 
