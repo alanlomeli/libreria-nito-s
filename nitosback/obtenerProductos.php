@@ -1,42 +1,52 @@
 <?php
     include 'conexion.php';
-    $Var = $_POST['number'];
-    $dameItems = mysqli_query($conexion, 'select producto.Producto_ID as id, articulo.Nombre as tipo, producto.Nombre as nombre, 
-    producto.Modelo as modelo, producto.Descripcion as descripcion, producto.Foto as foto, producto.Cantidad AS cantidad
-    FROM articulo INNER JOIN producto 
-    ON producto.Articulo_FK = articulo.Articulo_ID;') or die ("Fallo la consulta");
+    $dameItems = mysqli_query($conexion, 'SELECT
+producto.Producto_ID AS id,
+articulo.Nombre AS tipo,
+producto.Nombre AS nombre,
+producto.Modelo AS modelo,
+producto.Descripcion AS descripcion,
+producto.Foto AS foto,
+producto.Cantidad AS cantidad,
+producto.Precio AS precio,
+producto.Foto AS foto,
+marca.Nombre AS marca
+FROM
+articulo
+INNER JOIN producto ON producto.Articulo_FK = articulo.Articulo_ID
+INNER JOIN marca ON producto.Marca_FK = marca.Marca_ID
+;') or die ("Fallo la consulta");
     $nfilas=mysqli_num_rows($dameItems);
     $Fila=mysqli_fetch_array($dameItems);
     if ($nfilas > 0){
-        for ($i = 0; $i < $Var+1; $i++){
-        $idProducto = $Fila['id'];
-        $Fila=mysqli_fetch_array($dameItems);
+        print '[';
+        for ($i = 0; $i < $nfilas; $i++){
+
+            $nombre = $Fila['nombre'];
+            $descripcion = $Fila['descripcion'];
+            $modelo = $Fila['modelo'];
+            $cantidad = $Fila['cantidad'];
+            $precio = $Fila['precio'];
+            $marca = $Fila['marca'];
+            $articulo = $Fila['tipo'];
+            $foto = $Fila['foto'];
+            print '{';
+            print '"Nombre":"'.$nombre.'",';
+            print '"Descripcion":"'.$descripcion.'",';
+            print '"Modelo":"'.$modelo.'",';
+            print '"Cantidad":"'.$cantidad.'",';
+            print '"Precio":"'.$precio.'",';
+            print '"Marca":"'.$marca.'",';
+            print '"Foto":"'.$foto.'",';
+            print '"Articulo":"'.$articulo.'"';
+            if($i==$nfilas-1){
+                print "}";
+            }else{
+                print "},";
+            }
+            $Fila=mysqli_fetch_array($dameItems);
         }
+        print "]";
     }
-    $consulta = mysqli_query($conexion, '
-    select producto.Nombre as nombre, producto.Descripcion as descripcion, producto.Modelo as modelo, producto.Cantidad as cantidad,
-    producto.Precio as precio, marca.Nombre as marca, articulo.Nombre as tipo
-    from producto
-    inner join marca on producto.Marca_FK = marca.Marca_ID
-    inner join articulo on producto.Articulo_FK = articulo.Articulo_ID
-    where Producto_ID = '.$idProducto.';
-    ') or die ("fallo la consulta");
-    $Fila=mysqli_fetch_array($consulta);
-    $nombre = $Fila['nombre'];
-    $descripcion = $Fila['descripcion'];
-    $modelo = $Fila['modelo'];
-    $cantidad = $Fila['cantidad'];
-    $precio = $Fila['precio'];
-    $marca = $Fila['marca'];
-    $articulo = $Fila['tipo'];
-    echo "
-    Nombre: $nombre </br>
-    Descripcion: $descripcion </br>
-    Modelo: $modelo </br>
-    Cantidad: $cantidad </br>
-    Precio: $precio </br>
-    Marca: $marca </br>
-    Articulo: $articulo </br>
-    ";
     mysqli_close($conexion);
 ?>
