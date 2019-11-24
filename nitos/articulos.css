@@ -2,6 +2,7 @@
 body{
     margin: 0;
     font-family: 'Lato', sans-serif;
+    background-color: #000000;
 }
 
 
@@ -9,27 +10,8 @@ body{
     width: 100%;
     height: 250px;
 }
-.header{
-    position: relative;
-    text-align: center;
-    color: white;
-}
-.texto_portada {
-    font-size: 30px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color:white;
-}
 
-.navegacion{
-    margin-top: 30px;
-    width: 100%;
-    text-align: center;
-    font-size: 20px;
-    color: #989898;
-}
+
 a{
     text-decoration: none!important;
     color:inherit;
@@ -40,13 +22,14 @@ a{
         cursor:pointer;
 }
 #nav-tablas{
-    color:black;
+    color:#f05827;
 }
 .articulos{
     display:flex;
     justify-content: center;
     flex-wrap: wrap;
-
+    background-color: #000000;
+    color:#f05827;
 }
 .articulo{
     position: relative;
@@ -57,7 +40,7 @@ a{
     width: 22%;
     height: 431px;
     margin:20px;
-    border: 1px solid #777777;
+    border: 1px solid #87c23f;
 }
 .articulo-img{
     width: 100%;

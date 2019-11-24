@@ -21,14 +21,13 @@ peticionVerificarSesion.onload = function () {
 
     if (respuestaVerificarSesion.tipo === 2) {
       document.getElementById("menu-personalizado").innerHTML = `
-                  <a href="nuevoEvento.html">Crear Evento</a>
-                  <a href="almacenistas.html">Almacenistas</a>
-                  <a href="articulos.html">Articulos</a>
+                  <a href="nuevoEvento.html">crear evento</a>
+                  <a href="articulos.html">libros</a>
                   `;
       tipoCuenta = 2;
       document.getElementById("carro-opcion").innerHTML=`
                   <a href="carrito.html">
-                  <img src="/nitos/Assets/icons/baseline_shopping_cart_white_18dp.png" class="shopping-icon">
+                  <img src="/libreria-nito-s/nitos/Assets/icons/bookmark.png" class="shopping-icon">
                   </a>`;
 
     } else if (respuestaVerificarSesion.tipo === 3) {
@@ -38,14 +37,7 @@ peticionVerificarSesion.onload = function () {
 
     }else if (respuestaVerificarSesion.tipo === 1)
      {
-      document.getElementById("menu-personalizado").innerHTML = `
-      <a href="historial.html">Historial</a>`;
 
-      document.getElementById("carro-opcion").innerHTML=`
-                  <a href="carrito.html">
-                  <img src="/nitos/Assets/icons/baseline_shopping_cart_white_18dp.png" class="shopping-icon">
-                  </a>`;
-      tipoCuenta = 1;
     }
     verificarUbicacion();
 
@@ -54,7 +46,7 @@ peticionVerificarSesion.onload = function () {
     document.getElementById("menu").innerHTML = ``;
     document.getElementById("carro-opcion").innerHTML=`
                   <a href="carrito.html">
-                  <img src="/nitos/Assets/icons/baseline_shopping_cart_white_18dp.png" class="shopping-icon">
+                  <img src="/libreria-nito-s/nitos/Assets/icons/bookmark.png" class="shopping-icon">
                   </a>`;
     verificarUbicacion();
 
@@ -84,58 +76,7 @@ function cerrar_sesion(){
   peticionCerrarSesion.send();
 }
 
-    function verificarUbicacion() {
-      if (window.location.pathname === "/nitos/almacenistas.html"||
-        window.location.pathname==="/registro-almacenista.html") {
 
-        if (tipoCuenta !== 2) {
-          window.location.href = '404.html';
 
-        }
-
-      }else if (window.location.pathname === "/nitos/articulos.html"||
-        window.location.pathname==="/registro-articulos.html") {
-
-        if (tipoCuenta !== 2&&tipoCuenta!==3) {
-          window.location.href = '404.html';
-
-        }
-
-      }
-      else if (window.location.pathname === "/nitos/cuenta.html") {
-        if (tipoCuenta === 0||tipoCuenta === undefined) {
-          window.location.href = '404.html';
-        }
-      }
-
-      else if (window.location.pathname === "/nitos/index.html"){
-        if (tipoCuenta === 3)
-        {
-          window.location.href = 'articulos.html';
-        }
-      }
-
-      else if (window.location.pathname === "/nitos/tablas.html"){
-        if (tipoCuenta === 3)
-        {
-          window.location.href = '404.html';
-        }
-      }
-
-      else if (window.location.pathname === "/nitos/llantas.html"){
-        if (tipoCuenta === 3)
-        {
-          window.location.href = '404.html';
-        }
-      }
-
-      else if (window.location.pathname === "/nitos/trucks.html"){
-        if (tipoCuenta === 3)
-        {
-          window.location.href = '404.html';
-        }
-      }
-
-    }
 
 

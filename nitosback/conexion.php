@@ -11,7 +11,7 @@ header("Access-Control-Allow-Credentials: true");
 $conexion=mysqli_connect("localhost","root","")
 or die("No se puede conectar con el servidor");
 
-mysqli_select_db($conexion, "skaters")
+mysqli_select_db($conexion, "nitosdb")
 or die("No se puede conectar a la base de datos.");
 
 

@@ -1,55 +1,64 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
+    <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Skaters - Registro Articulos</title>
-    <link rel="shortcut icon" href="Assets/icons/logo_header.png" />
+    <link rel="shortcut icon" href="Assets/icons/logo_header.png"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script type="text/javascript" src="Assets/js/barnav.js"></script>
     <!-- Bootstrap 3 -->
-    <link rel="stylesheet" type="text/css" media="screen" href="Assets/js/bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="Assets/js/bootstrap/css/bootstrap.css"/>
     <style>
-        body{
-            background-color: #FFF;
+        body {
+            background-color: #000000;
         }
-        .panel-style{
+
+        .panel-style {
             padding-top: 20px;
             margin-block-end: 20px;
         }
-        .panel-title{
+
+        .panel-title {
             text-align: center;
         }
+
         .btn-boton-crear,
         .btn-boton-crear:hover,
-        .btn-boton-crear:active{
-            background-color:#494949;
+        .btn-boton-crear:active {
+            background-color: #494949;
             color: white;
             border-radius: 10%;
         }
-        .boton{
+
+        .boton {
             text-align: right;
         }
-        .panel-heading{
-            background:  #494949;
+
+        .panel-heading {
+            background: #87c23f;
             color: white;
         }
-        .panel-body{
+
+        .panel-body {
             text-align: left;
-            border: #494949 3px solid ;
+            border: #87c23f 1px solid;
         }
-        .imagen{
+
+        .imagen {
             text-align: left;
             height: 100px;
         }
-        .btn-group{
+
+        .btn-group {
             text-align: right;
             font-size: 15px;
             padding-top: 10px;
             padding-left: 83%;
         }
-        .form-group{
-            color: black;
+
+        .form-group {
+            color: #faaf18;
         }
 
         input:valid {
@@ -63,6 +72,9 @@
             color: #ffffff;
         }
 
+        #botoncrear {
+            color: black;
+        }
     </style>
 </head>
 <body>
@@ -100,8 +112,8 @@
                 </div>
 
                 <div class="form-group">
-                    <div class = "btn-group">
-                        <input type = "submit" value = "Crear" />
+                    <div class="btn-group">
+                        <input id="botoncrear" type="submit" value="Crear"/>
                     </div>
                 </div>
 
@@ -115,7 +127,7 @@
 </body>
 <script type="text/javascript">
 
-    document.getElementById("registro-eventos").action=backendSketis+"registroEventos.php";
+    document.getElementById("registro-eventos").action = backendSketis + "registroEventos.php";
 </script>
 </body>
 </html>

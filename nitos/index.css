@@ -49,7 +49,7 @@ ul {
 
 body,html{
 	padding:0;margin:0;
-	background-color:#F4F4F4;
+	background-color:#000000;
 }
 .navbar {
     overflow: hidden;
@@ -362,25 +362,28 @@ li a {
     height:auto;
     position: relative;
     padding: 0 !important;
-    margin: 15px;
+	border: #faaf18 1px solid;
 
+	margin: 14px;
 	box-shadow: 1px 1px 2px 0px rgba(0,0,0,0.2);
-	background-color:#FFF;
+	background-color:#000000;
 }
 
 .work figure.white dl{
-    background: #FFF;
+    background: #000000;
 }
 
 
 .work figure a img {
     height: 227px;
-    width: 223px;
+    width: 240px;
 
 	margin-left:5%;
 	margin-top:5%;
 }
-
+.links{
+	color:#68c7b3;
+}
 .work figure dl {
     opacity: 0;
     position: absolute;
@@ -433,7 +436,7 @@ li a {
 	position:relative;
 	width:100%;
 	height:44px;
-	background-color:#FFFFFF;
+	background-color:#000000;
 }
 
 .part-info{
@@ -494,9 +497,10 @@ li a {
 
 #wrapper-thank{
 	float:left;
+	color:#45c2e6;
 	width:100%;
 	height:190px;
-	background-color:#F2F2F2;
+	background-color:#000000;
 	margin-top:40px;
 }
 
@@ -509,6 +513,7 @@ li a {
 }
 
 .thank,.oldnew{
+	color:#45c2e6!important;
 	position:relative;
 	width:1200px;
 	left:50%;
@@ -523,6 +528,8 @@ li a {
 	font-family: 'Pacifico', cursive;
     font-size: 70px;
 	height:190px;
+	color:#45c2e6;
+
 	line-height:190px;
 	-webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -554,8 +561,8 @@ li a {
 	float:left;
 	width:100%;
 	height:auto;
-	background-color:#F9F9F9;
-	border-top:solid #F1F1F1 1px;
+	background-color:#000000;
+	border-top:solid #000000 1px;
 	-webkit-box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.1);
 	-moz-box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.1);
 	box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.1);
@@ -668,14 +675,16 @@ li a {
 /*----------------------------*/
 
 #wrapper-copyright{
+	border-top:white solid 1px ;
 	float:left;
 	width:100%;
 	height:70px;
-	background-color:#2E2D30;
+	background-color:#000000;
 	text-align: center;
 }
 
 .copyright{
+	color:#e65c23;
 	position:relative;
 	width:1200px;
 	left:50%;

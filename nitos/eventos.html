@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Almacenistas</title>
+    <title>eventos</title>
     <script type="text/javascript" src="Assets/js/barnav.js"></script>
     <link rel="shortcut icon" href="Assets/icons/logo_header.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,49 +11,22 @@
     <link rel="stylesheet" type="text/css" media="screen" href="Assets/js/bootstrap/css/bootstrap.css" />
     <style>
         body{
-            background-color: #FFF;
+            background-color: #000000;
         }
         .panel-style{
             padding-top: 60px;
         }
-        .panel-title{
-            text-align: center;
-        }
-        .btn-boton-crear,
-        .btn-boton-crear:hover,
-        .btn-boton-crear:active{
-            background-color:#fff;
-            color: white;
-            border-radius: 10%
-        }
-        .boton{
-            text-align: right;
-            height: 100px;
-        }
-        .panel-heading{
-            background:  #494949;
-            color: white;
-            width:100%;
-        }
-        .btn-group{
-            text-align: right;
-            font-size: 15px;
-            padding-top: 10px;
-            padding-left: 80%;
-        }
-        .form-group{
-            color: black;
-        }
+
         .head{
             text-align: center;
-            background:#494949;
-            color:white;
-        }
-        .mas-icon{
-            width: 20px;
-            height: 20px;
-        }
+            color:#faaf18;
 
+        }
+            #evento{
+                border:1px solid #87c23f;
+                margin:10px;
+                padding:10px;
+            }
     </style>
 </head>
 <body id="hideme">
@@ -61,7 +34,7 @@
 <div class="head">
     <h3>
         <strong>
-            Próximos eventos
+            próximos eventos
         </strong>
     </h3>
 </div>
@@ -99,12 +72,12 @@
         for(let i=0; i<objeto.length;i++) {
             document.getElementById("eventos").innerHTML +=
                 `
-
-                <strong style="font-family: 'Arial Rounded MT Bold'; font-size: 25px" >${objeto[i].Titulo}</strong>
-                <p><strong style="color: #ff7018; font-size: 16px">Fecha:</strong> ${objeto[i].Fecha}  <strong style="color: #ff7018; font-size: 16px">Hora:</strong> ${objeto[i].Hora}</p>
-                <strong style="color: #ff7018; font-size: 16px">Descripción:</strong>
-                <p>${objeto[i].Descripcion}</p>
-
+                 <div id="evento">
+                <strong style="font-family: 'Arial Rounded MT Bold'; font-size: 25px" ><span style="color:#faaf18;">${objeto[i].Titulo}</span></strong>
+                <p><strong style="color: #f05827; font-size: 16px">Fecha:</strong>  <span style="color: #68c7b3;">${objeto[i].Fecha}</span>  <strong style="color: #f05827; font-size: 16px">Hora:</strong>  <span style="color: #68c7b3;">${objeto[i].Hora}</p></span>
+                <strong style="color: #f05827; font-size: 16px">Descripción:</strong>
+                <span style="color: #68c7b3;"><p>${objeto[i].Descripcion}</p></span>
+</div>
          `;
         }
     };

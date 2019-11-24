@@ -1,38 +1,84 @@
-body{
-  background-color: #FFF;
+body {
+    background-color: #000000;
 }
-.panel-style{
-  padding-top: 60px;
+
+.panel-style {
+    padding-top: 20px;
+    margin-block-end: 20px;
 }
-.panel-title{
-text-align: center;
+
+.panel-title {
+    text-align: center;
 }
+
 .btn-boton-crear,
 .btn-boton-crear:hover,
-.btn-boton-crear:active{
-background-color:#494949;
-color: white;
-border-radius: 10%
+.btn-boton-crear:active {
+    background-color: #000000;
+    color: #faaf18;
+
+
+    border-radius: 10%;
 }
-.boton{
-text-align: right;
+
+.boton {
+    text-align: right;
 }
-.panel-heading{
-  background:  #494949;
-  color: white;
+
+.panel-heading {
+    background: #87c23f;
+    color: white;
 }
-.panel-body{
-text-align: left;
-border: #494949 3px solid ;
+
+.panel-body {
+    text-align: left;
+    border: #87c23f 1px solid;
 }
-.Creacion{
-text-align: right;
-font-size: 15px;
-padding-top:  10px;
+
+.imagen {
+    text-align: left;
+    height: 100px;
 }
-.Inicio{
-text-align: right;
-font-size: 15px;
-padding-top:  10px;
-padding-right: 30px;
+
+.btn-group {
+    text-align: right;
+    font-size: 15px;
+    padding-top: 10px;
+    padding-left: 83%;
+}
+
+.form-group {
+    color: #faaf18;
+}
+
+input:valid {
+    border: 1px solid green;
+    box-shadow: 0 0 1px 1px green;
+}
+
+.bg-4 {
+    padding-top: 10px;
+    background-color: #343434;
+    color: #ffffff;
+}
+
+#botoncrear {
+    color: #faaf18;
+}
+
+.Creacion {
+    text-align: right;
+    font-size: 15px;
+    padding-top: 10px;
+    color: #faaf18;
+
+}
+
+.Inicio {
+    text-align: right;
+    font-size: 15px;
+    padding-top: 10px;
+    padding-right: 30px;
+    color: #faaf18;
+
 }

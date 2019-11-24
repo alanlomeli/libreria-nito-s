@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Skaters - Tablas</title>
+    <script type="text/javascript" src="Assets/js/barnav.js"></script>
+    <link rel="shortcut icon" href="Assets/icons/logo_header.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="articulos.css">
+    <link href="Assets/Lato-font/Lato.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div id="insertar-barra"></div>
+
+<div style="text-align: center; color:#faaf18"><h1>nuestra selecci&oacute;n de libros</h1><br></div>
+
+
+<div class="articulos" id="insertar-articulos">
+<script type="text/javascript">
+    var objeto;
+    const xhr = new XMLHttpRequest();
+    xhr.onload = function() {
+        //alert(this.responseText);
+        console.log(this.responseText);
+        objeto = JSON.parse(this.responseText);
+
+        for (let i = 0; i < objeto.length; i++) {
+            document.getElementById("insertar-articulos").innerHTML += `
+<div class="articulo">
+        <img class="articulo-img" src="/sketis/Assets/bd/${objeto[i].Foto}" alt="Libro bonito">
+        <div class="articulo-texto">
+            ${objeto[i].Nombre}
+ </div>
+        <span >$${objeto[i].Precio}</span>
+        <div class="icono-carrito"><img alt="shopping" src="Assets/icons/bookmark.png" class="shopping-icon" onclick="alcarro(${objeto[i].ID}, ${objeto[i].Precio})">        <span class="tooltipcarrito">Agregar al carrito</span>
+        </div>
+    </div>
+`;
+        }
+    };
+    var fd = new FormData();
+    fd.append("tipo", "3");
+    xhr.open("POST", backendSketis+"articulos.php", true);
+    xhr.withCredentials=true;
+    xhr.send(fd);
+
+    function alcarro(ID, Precio) {
+        const xhc = new XMLHttpRequest();
+        var respuesta;
+        xhc.onload = function() {
+            respuesta = JSON.parse(this.responseText);
+        };
+        var fd = new FormData();
+        fd.append("Add", ID);
+        fd.append("Precio", Precio);
+        xhc.open("POST", backendSketis+"carro.php", true);
+        xhc.withCredentials=true;
+        xhc.send(fd);
+    }
+</script>
+
+</body>
+
+</html>
