@@ -30,9 +30,12 @@
             for (let i = 0; i < objeto.length; i++) {
                 document.getElementById("insertar-articulos").innerHTML += `
 <div class="articulo">
-        <img class="articulo-img" src="/sketis/Assets/bd/${objeto[i].Foto}" alt="Libro bonito">
+        <img class="articulo-img" src="../nitos/Assets/img/${objeto[i].Foto}" alt="Libro bonito">
         <div class="articulo-texto">
             ${objeto[i].Nombre}
+ </div>
+ <div class="articulo-texto">
+            ${objeto[i].Descripcion}
  </div>
         </div>
     </div>
@@ -40,8 +43,8 @@
             }
         };
         var fd = new FormData();
-        fd.append("tipo", "3");
-        xhr.open("POST", backendSketis+"articulos.php", true);
+
+        xhr.open("POST", "../nitosback/obtenerAutores.php", true);
         xhr.withCredentials=true;
         xhr.send(fd);
 
