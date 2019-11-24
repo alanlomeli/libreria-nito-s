@@ -19,7 +19,7 @@ a{
 
 .item-nav:hover {
     color:black;
-        cursor:pointer;
+    cursor:pointer;
 }
 #nav-tablas{
     color:#f05827;
@@ -42,17 +42,19 @@ a{
     margin:20px;
     border: 1px solid #87c23f;
 }
-.foto-autor{
-    width: 100%;
-    height: 60%;
+.autor-img{
+    top:0!important;
 }
 .articulo-img{
     width: 100%;
-    height: 330px;
-    margin-bottom:5px;
+    height: 294px;
 }
 .articulo-texto{
     text-align: center;
+}
+#autor{
+    height: 695px;
+
 }
 .icono-carrito{
     cursor: pointer;

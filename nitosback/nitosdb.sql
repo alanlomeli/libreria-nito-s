@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.1
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Nov 24, 2019 at 07:55 PM
--- Server version: 10.4.8-MariaDB
--- PHP Version: 7.3.10
+-- Host: localhost
+-- Generation Time: Nov 24, 2019 at 11:34 PM
+-- Server version: 10.4.6-MariaDB-log
+-- PHP Version: 7.3.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -40,8 +40,8 @@ CREATE TABLE `articulo` (
 --
 
 INSERT INTO `articulo` (`Articulo_ID`, `Nombre`, `Descripcion`, `Foto`) VALUES
-(1, 'Gabriel Garcia Marquez', 'Gabriel José de la Concordia García Márquez<br>\r\n(Aracataca, Magdalena, 6 de marzo de 1927 -<br> \r\nCiudad de México, 17 de abril de 2014?)<br>\r\nfue un escritor, guionista, editor y <br>\r\nperiodista colombiano. En 1982 recibió el<br> \r\nPremio Nobel de Literatura.<br>\r\nEstá relacionado de manera inherente con<br> \r\nel realismo mágico y su obra más conocida,<br> \r\nla novela Cien años de soledad, <br>\r\nes considerada una de las más representativas <br>\r\nde este movimiento literario, e incluso se <br>\r\nconsidera que por el éxito de la <br>\r\nnovela es que tal término se aplica a la <br>\r\nliteratura surgida a partir de los años 1960 <br>\r\nen América Latina. <br>\r\n?En 2007 la Real Academia Española y la <br>\r\nAsociación de Academias de la Lengua Española <br>\r\npublicaron una edición popular <br>\r\nconmemorativa de esta obra, por considerarla <br>\r\nparte de los grandes clásicos hispánicos de <br>\r\ntodos los tiempos.<br>', 'garcia_marquez.jpg'),
-(2, 'Charles John Huffam Dickens', 'Charles John Huffam Dickens (Portsmouth, 7 de febrero de 1812-Gads Hill Place, 9 de junio de 1870) fue un escritor y novelista inglés, uno de los más reconocidos de la literatura universal, y el más sobresaliente de la época victoriana. Fue maestro del gé', 'autores.jpeg');
+(1, 'Gabriel Garcia Marquez', 'Gabriel Jos&eacute; de la Concordia Garc&iacute;a M&aacute;rquez (Aracataca, Magdalena, 6 de marzo de 1927 -  Ciudad de M&eacute;xico, 17 de abril de 2014?) fue un escritor, guionista, editor y  periodista colombiano. En 1982 recibi&oacute; el  Premio Nobel de Literatura. Est&aacute; relacionado de manera inherente con  el realismo m&aacute;gico y su obra m&aacute;s conocida,  la novela Cien a&ntilde;os de soledad,  es considerada una de las m&aacute;s representativas  de este movimiento literario, e incluso se  considera que por el &eacute;xito de la  novela es que tal t&eacute;rmino se aplica a la  literatura surgida a partir de los a&ntilde;os 1960  en Am&eacute;rica Latina.  ?En 2007 la Real Academia Espa&ntilde;ola y la  Asociaci&oacute;n de Academias de la Lengua Espa&ntilde;ola  publicaron una edici&oacute;n popular  conmemorativa de esta obra.', 'garcia_marquez.jpg'),
+(2, 'Charles John Huffam Dickens', 'Gabriel Jos&eacute; de la Concordia Garc&iacute;a M&aacute;rquez (Aracataca, Magdalena, 6 de marzo de 1927 -  Ciudad de M&eacute;xico, 17 de abril de 2014?) fue un escritor, guionista, editor y  periodista colombiano. En 1982 recibi&oacute; el  Premio Nobel de Literatura. Est&aacute; relacionado de manera inherente con  el realismo m&aacute;gico y su obra m&aacute;s conocida,  la novela Cien a&ntilde;os de soledad,  es considerada una de las m&aacute;s representativas  de este movimiento literario, e incluso se  considera que por el &eacute;xito de la  novela es que tal t&eacute;rmino se aplica a la  literatura surgida a partir de los a&ntilde;os 1960  en Am&eacute;rica Latina.  ?En 2007 la Real Academia Espa&ntilde;ola y la  Asociaci&oacute;n de Academias de la Lengua Espa&ntilde;ola  publicaron una edici&oacute;n popular  conmemorativa de esta obra.', 'autores.jpeg');
 
 -- --------------------------------------------------------
 
@@ -184,7 +184,7 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`Usuario_ID`, `Tipo_FK`, `Nombre`, `Apellido`, `Correo`, `Contrasena`, `Ultima_Conexion`) VALUES
-(1, 2, 'Alan Jesus', 'Lomeli', 'alomeligcia@gmail.com', 'clave', 1574561420),
+(1, 2, 'Alan Jesus', 'Lomeli', 'alomeligcia@gmail.com', 'clave', 1574634847),
 (2, 1, 'Doug Dimmadomme', 'Dueño del Domodimm', 'dougdim@gmail.com', 'clave', 0),
 (3, 3, 'Jose de Jesus', 'Jimenez Jara', 'josesito@gmail.com', 'clave', 0),
 (6, 1, 'Maria', 'Jimenez', 'a16100159@ceti.mx', '123', 0),
