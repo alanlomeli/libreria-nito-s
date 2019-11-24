@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
+    <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>nito's</title>
-    <link rel="shortcut icon" href="Assets/icons/logo_header.png" />
+    <link rel="shortcut icon" href="Assets/icons/logo_header.png"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script type="text/javascript" src="Assets/js/barnav.js"></script>
-    <!-- Bootstrap 3 -->
-    <link rel="stylesheet" type="text/css" media="screen" href="Assets/js/bootstrap/css/bootstrap.css" />
+     <link rel="stylesheet" type="text/css" media="screen" href="Assets/js/bootstrap/css/bootstrap.css"/>
     <style>
         body {
             background-color: #000000;
@@ -23,17 +22,6 @@
             text-align: center;
         }
 
-        .btn-boton-crear,
-        .btn-boton-crear:hover,
-        .btn-boton-crear:active {
-            background-color: #494949;
-            color: white;
-            border-radius: 10%;
-        }
-
-        .boton {
-            text-align: right;
-        }
 
         .panel-heading {
             background: #87c23f;
@@ -72,7 +60,7 @@
             color: #ffffff;
         }
 
-        #botoncrear{
+        #botoncrear {
             background-color: #000000;
         }
     </style>
@@ -97,7 +85,7 @@
                     <label for="nombre">PK</label>
                     <input type="text" name="id" placeholder="ID"
 
-                           maxlength="50" id="id" class="form-control" required="required" >
+                           maxlength="50" id="id" class="form-control" required="required">
                 </div>
 
                 <div class="form-group">
@@ -118,16 +106,18 @@
                 </div>
                 <div class="form-group">
                     <label for="cantidad">Cantidad*</label>
-                    <input min= "1" max="99999" type="number" name="cantidad" id="cantidad" placeholder="Cantidad de productos a agregar" class="form-control" required="required">
+                    <input min="1" max="99999" type="number" name="cantidad" id="cantidad"
+                           placeholder="Cantidad de productos a agregar" class="form-control" required="required">
                 </div>
                 <div class="form-group">
                     <label for="precio">Precio*</label>
-                    <input min= "1" max="99999" type="number" name="precio" id="precio" placeholder="Precio (en MXN)" class="form-control" required="required">
+                    <input min="1" max="99999" type="number" name="precio" id="precio" placeholder="Precio (en MXN)"
+                           class="form-control" required="required">
                 </div>
 
                 <div class="form-group">
-                    <label >Seleccionar Marca*</label>
-                    <select class="form-control" name ="marca" id="marca" required>
+                    <label>Seleccionar Marca*</label>
+                    <select class="form-control" name="marca" id="marca" required>
                         <option>Antifashion</option>
                         <option>Antifashion</option>
                         <option>Santa Cruz</option>
@@ -146,9 +136,10 @@
                 </div>
 
                 <div class="form-group">
-                    <label >Seleccionar Articulo*</label>
+                    <label>Seleccionar Articulo*</label>
                     <select class="form-control" name="articulo" id="articulo" required>
-                        <option>Tablas</option>>
+                        <option>Tablas</option>
+                        >
                         <option>Llantas</option>
                         <option>Trucks</option>
                         <option>Tablas</option>
@@ -162,8 +153,8 @@
                 </div>
 
                 <div class="form-group">
-                    <div class = "btn-group">
-                        <input id="botoncrear" type = "submit" value = "editar" />
+                    <div class="btn-group">
+                        <input id="botoncrear" type="submit" value="editar"/>
                     </div>
                 </div>
 
@@ -179,33 +170,33 @@
 </body>
 
 <script type="text/javascript">
-    document.getElementById("registro-articulos").action=backendSketis+"editarProducto.php";
+    document.getElementById("registro-articulos").action = backendSketis + "editarProducto.php";
 
-        var nombre = localStorage.getItem("nombre");
-        var desc = localStorage.getItem("descripcion");
-        var mod = localStorage.getItem("modelo");
-        var cant = localStorage.getItem("cantidad");
-        var costo = localStorage.getItem("precio");
-        var marca = localStorage.getItem("marca");
-        var tipo = localStorage.getItem("tipo");
-        var id = localStorage.getItem("id");
+    var nombre = localStorage.getItem("nombre");
+    var desc = localStorage.getItem("descripcion");
+    var mod = localStorage.getItem("modelo");
+    var cant = localStorage.getItem("cantidad");
+    var costo = localStorage.getItem("precio");
+    var marca = localStorage.getItem("marca");
+    var tipo = localStorage.getItem("tipo");
+    var id = localStorage.getItem("id");
 
-        document.getElementById('nombre').value=nombre;
-        document.getElementById('descripcion').value=desc;
-        document.getElementById('modelo').value=mod;
-        document.getElementById('cantidad').value=cant;
-        document.getElementById('precio').value=costo;
-        document.getElementById('marca').value=marca;
-        document.getElementById('articulo').value=tipo;
-        document.getElementById('id').value=id;
+    document.getElementById('nombre').value = nombre;
+    document.getElementById('descripcion').value = desc;
+    document.getElementById('modelo').value = mod;
+    document.getElementById('cantidad').value = cant;
+    document.getElementById('precio').value = costo;
+    document.getElementById('marca').value = marca;
+    document.getElementById('articulo').value = tipo;
+    document.getElementById('id').value = id;
 
     localStorage.removeItem("nombre");
-        localStorage.removeItem("descripcion");
-        localStorage.removeItem("modelo");
-        localStorage.removeItem("cantidad");
-        localStorage.removeItem("precio");
-        localStorage.removeItem("marca");
-        localStorage.removeItem("articulo");
+    localStorage.removeItem("descripcion");
+    localStorage.removeItem("modelo");
+    localStorage.removeItem("cantidad");
+    localStorage.removeItem("precio");
+    localStorage.removeItem("marca");
+    localStorage.removeItem("articulo");
     localStorage.removeItem("id");
 
 </script>

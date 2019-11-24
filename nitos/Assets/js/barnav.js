@@ -32,14 +32,13 @@ peticionVerificarSesion.onload = function () {
 
     } else if (respuestaVerificarSesion.tipo === 3) {
       document.getElementById("menu-personalizado").innerHTML = `
-                  <a href="articulos.html">Articulos</a>`;
+                  <a href="articulos.html">libros</a>`;
       tipoCuenta = 3;
 
     }else if (respuestaVerificarSesion.tipo === 1)
      {
 
     }
-    verificarUbicacion();
 
   } else {
 
@@ -48,7 +47,6 @@ peticionVerificarSesion.onload = function () {
                   <a href="carrito.html">
                   <img src="/libreria-nito-s/nitos/Assets/icons/bookmark.png" class="shopping-icon">
                   </a>`;
-    verificarUbicacion();
 
   }
 
