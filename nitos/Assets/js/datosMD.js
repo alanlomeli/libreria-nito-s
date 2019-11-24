@@ -1,2 +1,2 @@
-alert('El campo descripcion DEBE contener al menos 3 caracteres validos');
+alert('descripción muy corta');
 window.history.back();

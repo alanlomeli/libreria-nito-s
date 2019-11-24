@@ -1,2 +1,2 @@
-alert('El campo nombre DEBE contener al menos 3 caracteres validos');
+alert('nombre inválido! es muy corto :c');
 window.history.back();

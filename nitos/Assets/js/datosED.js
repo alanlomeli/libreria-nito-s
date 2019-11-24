@@ -1,2 +1,2 @@
-alert('El campo descripcion NO debe comenzar por un espacio');
+alert('descripcion sin espacio porfis');
 window.history.back();

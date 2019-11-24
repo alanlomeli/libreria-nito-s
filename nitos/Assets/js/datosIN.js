@@ -1,2 +1,2 @@
-alert('El campo nombre tiene caracteres NO validos');
+alert('nombre tiene carácteres no vpalidos');
 window.history.back();

@@ -1,2 +1,2 @@
-alert('El campo apellido DEBE contener al menos 3 caracteres validos');
+alert('apellido debe de contener 3 campos al menos');
 window.history.back();

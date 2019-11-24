@@ -21,7 +21,7 @@ INNER JOIN marca ON producto.Marca_FK = marca.Marca_ID
     if ($nfilas > 0){
         print '[';
         for ($i = 0; $i < $nfilas; $i++){
-
+            $id = $Fila['id'];
             $nombre = $Fila['nombre'];
             $descripcion = $Fila['descripcion'];
             $modelo = $Fila['modelo'];
@@ -31,6 +31,7 @@ INNER JOIN marca ON producto.Marca_FK = marca.Marca_ID
             $articulo = $Fila['tipo'];
             $foto = $Fila['foto'];
             print '{';
+            print '"ID":"'.$id.'",';
             print '"Nombre":"'.$nombre.'",';
             print '"Descripcion":"'.$descripcion.'",';
             print '"Modelo":"'.$modelo.'",';

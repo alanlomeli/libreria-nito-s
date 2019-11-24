@@ -1,2 +1,2 @@
-alert('El campo apellido tiene caracteres NO validos');
+alert('apellído tiene carácteres no válidos');
 window.history.back();

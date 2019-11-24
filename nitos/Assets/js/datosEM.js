@@ -1,2 +1,2 @@
-alert('El campo modelo NO debe comenzar por un espacio');
+alert('modelo sin empezar con espacio porfis');
 window.history.back();

@@ -1,0 +1,161 @@
+<!-- Developer name: Jairon Landa (jaironlanda.com) -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Skaters - Registro Almacenista</title>
+    <link rel="shortcut icon" href="Assets/icons/logo_header.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="Assets/js/barnav.js"></script>
+    <!-- Bootstrap 3 -->
+    <link rel="stylesheet" type="text/css" media="screen" href="Assets/js/bootstrap/css/bootstrap.css" />
+    <style>
+        body {
+            background-color: #000000;
+        }
+
+        .panel-style {
+            padding-top: 20px;
+            margin-block-end: 20px;
+        }
+
+        .panel-title {
+            text-align: center;
+        }
+
+        .btn-boton-crear,
+        .btn-boton-crear:hover,
+        .btn-boton-crear:active {
+            background-color: #000000;
+            color: #faaf18;
+
+
+            border-radius: 10%;
+        }
+
+        .boton {
+            text-align: right;
+        }
+
+        .panel-heading {
+            background: #87c23f;
+            color: white;
+        }
+
+        .panel-body {
+            text-align: left;
+            border: #87c23f 1px solid;
+        }
+
+        .imagen {
+            text-align: left;
+            height: 100px;
+        }
+
+        .btn-group {
+            text-align: right;
+            font-size: 15px;
+            padding-top: 10px;
+            padding-left: 83%;
+        }
+
+        .form-group {
+            color: #faaf18;
+        }
+
+        input:valid {
+            border: 1px solid green;
+            box-shadow: 0 0 1px 1px green;
+        }
+
+        .bg-4 {
+            padding-top: 10px;
+            background-color: #343434;
+            color: #ffffff;
+        }
+
+        #botoncrear {
+            color: #faaf18;
+        }
+
+        .Creacion {
+            text-align: right;
+            font-size: 15px;
+            padding-top: 10px;
+            color: #faaf18;
+
+        }
+
+        .Inicio {
+            text-align: right;
+            font-size: 15px;
+            padding-top: 10px;
+            padding-right: 30px;
+            color: #faaf18;
+
+        }
+
+    </style>
+</head>
+<body>
+<div id="insertar-barra"></div>
+
+
+<div class="container">
+    <div class="col-md-8 col-md-offset-2 panel-style">
+        <div class="panel-heading">
+            <h3 class="panel-title">
+                <strong>
+                    registrar creador de contenido
+                </strong>
+            </h3>
+        </div>
+        <div class="panel-body">
+            <form id="registrar-almacenista" action="" method="post">
+                <div class="form-group">
+                    <label for="nombre">nombre de creador</label>
+                    <input type="text" name="nombre" id="nombre" placeholder="ingresa nombre de creador" input maxlength="50"
+                           class="form-control" required="required">
+                </div>
+                <div class="form-group">
+                    <label for="apellido">apellido de creador</label>
+                    <input type="text" name="apellido" id="apellido" placeholder="ingresa apellido de creador" input maxlength="50"
+                           class="form-control" required="required">
+                </div>
+                <div class="form-group">
+                    <label for="correo">email de creador</label>
+                    <input type="email" name="correo" id="correo" placeholder="correo@correo.com" input maxlength="255"
+                           class="form-control" required="required">
+                </div>
+                <div class="form-group">
+                    <label for="contraseña">credencial de creador</label>
+                    <input type="password" name="contraseña" id="contraseña" placeholder="credencial" input maxlength="128"
+                           class="form-control" required="required">
+                </div>
+                <div class="form-group">
+                    <label for="confirmar">confirmar credencial</label>
+                    <input type="password" name="confirmar" id="confirmar" placeholder="credencial" input maxlength="50"
+                           class="form-control" required="required">
+                </div>
+                <div class="form-group">
+                    <div class="boton-crear">
+                        <div class="boton">
+                            <button type="submit" class="boton-crear btn-sm btn-boton-crear">crear</button>
+                        </div>
+                    </div>
+                    <div class="Creacion">
+                        <a href="index.html" style="color:#faaf18; float: left;"><-</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
+</div>
+<script type="text/javascript">
+    document.getElementById("registrar-almacenista").action=backendSketis+"regAlmacenistas.php";
+</script>
+</body>
+</html>

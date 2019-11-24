@@ -1,2 +1,2 @@
-alert('El campo telefono DEBE contener al menos 10 caracteres validos');
+alert('teléfono debe tener al menos 10 digitos >:-c');
 window.history.back();

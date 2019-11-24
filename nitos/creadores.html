@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Almacenistas</title>
+    <script type="text/javascript" src="Assets/js/barnav.js"></script>
+    <link rel="shortcut icon" href="Assets/icons/logo_header.png"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap 3 -->
+    <link rel="stylesheet" type="text/css" media="screen" href="Assets/js/bootstrap/css/bootstrap.css"/>
+    <style>
+        body {
+            background-color: #000000;
+
+        }
+
+        .panel-style {
+            padding-top: 60px;
+        }
+
+        .panel-title {
+            text-align: center;
+        }
+
+        .btn-boton-crear,
+        .btn-boton-crear:hover,
+        .btn-boton-crear:active {
+            background-color: #fff;
+            color: white;
+            border-radius: 10%
+        }
+
+        .boton {
+            text-align: right;
+            height: 100px;
+        }
+
+        .panel-heading {
+            background: #494949;
+            color: white;
+            width: 100%;
+        }
+
+        .btn-group {
+            text-align: right;
+            font-size: 15px;
+            padding-top: 10px;
+            padding-left: 80%;
+        }
+
+        .form-group {
+            color: black;
+        }
+
+        .head {
+            text-align: center;
+            background: #000000;
+            color: #faaf18;
+        }
+
+        .mas-icon {
+            width: 20px;
+            height: 20px;
+        }
+
+        .articulo {
+            background-color: #333;
+        }
+
+        div.container-info {
+            width: 80%;
+            margin: auto;
+        }
+
+        div.foto-producto {
+            width: 25%;
+            float: left;
+        }
+
+        img.foto-producto {
+            width: 100%;
+        }
+
+        div.info-producto {
+            width: 74%;
+            text-align: center;
+        }
+
+        .tamaño {
+            width: 25%;
+            text-align: left;
+        }
+
+        .btn {
+            background: none;
+            text-align: left;
+            width: 35%;
+            color: #f05827;
+
+        }
+
+        #basura {
+            color: #f05827;
+        }
+
+        .editar-libro {
+            margin: 10px;
+        }
+
+        #creador {
+            color: #f05827;
+
+        }
+
+        #eliminar {
+            color: #f05827;
+            text-decoration: none;
+            background-color: black;
+            padding: 0;
+            border: 1px solid #87c23f;
+
+
+        }
+    </style>
+</head>
+<body id="hideme">
+<div id="insertar-barra"></div>
+<div class="head">
+    <h3>
+        <strong>
+            creadores de contenido
+        </strong>
+    </h3>
+</div>
+<div class="container">
+    <div class="col-md-8 col-md-offset-2 panel-style">
+        <div class="panel-body">
+
+            <div class="boton-crear">
+                <div class="boton">
+                </div>
+                <a href="registro-creador.html">
+                    CLICK AQUI PARA AGREGAR NUEVOS CREADORES DE CONTENIDO
+                    <img src="Assets/icons/icono_mas.png" class="mas-icon" id="agregar">
+                </a>&nbsp;&nbsp;
+                <!--Aqui llega el script-->
+                <div id="insertar-almacenistas"></div>
+                <!--Aqui se acabaxd-->
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+<script type="text/javascript">
+    var objeto;
+    const xhr = new XMLHttpRequest();
+    xhr.onload = function () {
+        objeto = JSON.parse(this.responseText);
+        for (let i = 0; i < objeto.length; i++) {
+            document.getElementById("insertar-almacenistas").innerHTML +=
+                `
+                <form OnSubmit="borrar(${objeto[i].Numero_de_Empleado})" method="POST">
+        <button  id="eliminar" type="submit">
+    <span>ELIMINAR</span>
+         </button>
+        <input type="hidden"></input>
+              <span id="creador"><strong>Creador:</strong>  ${objeto[i].Nombre} ${objeto[i].Apellido}</span>
+         </BR>
+         </form>
+         `;
+        }
+    };
+    xhr.open("GET", backendSketis + "view_almacenistas.php", true);
+    xhr.send();
+
+    //Redirección al borrar
+    function borrar(numero_empleado) {
+        const xhra = new XMLHttpRequest();
+        xhra.onload = function () {
+            obj = JSON.parse(this.responseText);
+        };
+        var fa = new FormData();
+        fa.append("number", numero_empleado);
+        xhr.open("POST", backendSketis + "borrar_almacenista.php", true);
+        xhr.send(fa);
+    }
+</script>
+</body>
+</html>

@@ -1,2 +1,2 @@
-alert('El campo apellido NO debe comenzar por un espacio');
+alert('apellido sin espacios porfis');
 window.history.back();

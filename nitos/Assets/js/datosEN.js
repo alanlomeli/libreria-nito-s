@@ -1,2 +1,2 @@
-alert('El campo nombre NO debe comenzar por un espacio');
+alert('nombre no debe de empezar con espacio porfis');
 window.history.back();

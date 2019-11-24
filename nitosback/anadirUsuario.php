@@ -99,23 +99,8 @@ else{
                     setTimeout ("r()", 3500);
                     </script>
             <style>
-            body{
-                background-color: #ef7979;
-                }
-            .okimage{
-                display:block;
-                margin-left: auto;
-                margin-right: auto;
-                margin-top: 200px;
-                height: 200px;
-                width: 200px;
-            }
-            .texto{
-                text-align: center;
-                font: oblique bold 120% cursive;
-                font-size: 200%;
-                color: #FFF;
-            }
+
+
             </style>
     </head>
     <body>
@@ -141,35 +126,14 @@ else{
             <title>Skaters - Status</title>
             <link rel="shortcut icon" href="'.$frontEndSketis.'Assets/icons/logo_header.png" />
             <script>
-                    function r() { location.href="'.$frontEndSketis.'skaters/login.html"}
-                    setTimeout ("r()", 2700);
+                    function r() { location.href="'.$frontEndSketis.'/login.html"}
+                    setTimeout ("r()", 0);
                     </script>
             <style>
-            body{
-                background-color: #00d27b;
-                }
-            .okimage{
-                display:block;
-                margin-left: auto;
-                margin-right: auto;
-                margin-top: 200px;
-                height: 200px;
-                width: 200px;
-            }
-            .texto{
-                text-align: center;
-                font: oblique bold 120% cursive;
-                font-size: 200%;
-                color: #FFF;
-            }
+
             </style>
     </head>
-    <body>
-        <tr>
-            <td> <img class="okimage" src="'.$frontEndSketis.'Assets/icons/ok_icon.png"/> </td>
-            <td><p class="texto">Te has registrado de manera exitosa! Gracias por formar parte de skaters.</br> seras redireccionado automaticamente....</p></td>
-        </tr>
-    </body>
+    <
 </html>
         ';
         }

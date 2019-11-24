@@ -21,6 +21,7 @@ peticionVerificarSesion.onload = function () {
 
     if (respuestaVerificarSesion.tipo === 2) {
       document.getElementById("menu-personalizado").innerHTML = `
+                  <a href="creadores.html">creadores de contenido</a>
                   <a href="nuevoEvento.html">crear evento</a>
                   <a href="articulos.html">libros</a>
                   `;

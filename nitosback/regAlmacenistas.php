@@ -68,35 +68,15 @@ if ($contraseña != $confirmar){
             <title>Skaters - Status</title>
             <link rel="shortcut icon" href="'.$frontEndSketis.'Assets/icons/logo_header.png" />
             <script>
-                    function r() { location.href="'.$frontEndSketis.'registro-almacenista.html"}
-                    setTimeout ("r()", 5000);
+                    function r() { location.href="'.$frontEndSketis.'registro-creador.html"}
+                    setTimeout ("r()", 0);
+                    alert("ERROR");
                     </script>
             <style>
-            body{
-                background-color: #ef7979;
-                }
-            .okimage{
-                display:block;
-                margin-left: auto;
-                margin-right: auto;
-                margin-top: 200px;
-                height: 200px;
-                width: 200px;
-            }
-            .texto{
-                text-align: center;
-                font: oblique bold 120% cursive;
-                font-size: 200%;
-                color: #FFF;
-            }
+
             </style>
     </head>
-    <body>
-        <tr>
-            <td> <img class="okimage" src="'.$frontEndSketis.'Assets/icons/err_icon.png"/> </td>
-            <td><p class="texto">Error: la contraseña no es igual en ambos campos </br> seras redireccionado automaticamente....</p></td>
-        </tr>
-    </body>
+
 </html>
     ';
 }
@@ -123,34 +103,14 @@ else{
       <title>Skaters - Status</title>
       <link rel="shortcut icon" href="'.$frontEndSketis.'Assets/icons/logo_header.png" />
       <script>
-              function r() { location.href="'.$frontEndSketis.'registro-almacenista.html"}
-              setTimeout ("r()", 3500);
+              function r() { location.href="'.$frontEndSketis.'registro-creador.html"}
+              setTimeout ("r()", 0);
               </script>
       <style>
-      body{
-          background-color: #ef7979;
-          }
-      .okimage{
-          display:block;
-          margin-left: auto;
-          margin-right: auto;
-          margin-top: 200px;
-          height: 200px;
-          width: 200px;
-      }
-      .texto{
-          text-align: center;
-          font: oblique bold 120% cursive;
-          font-size: 200%;
-          color: #FFF;
-      }
-      </style>
+
 </head>
 <body>
-  <tr>
-      <td> <img class="okimage" src="'.$frontEndSketis.'Assets/icons/err_icon.png"/> </td>
-      <td><p class="texto">Error: El correo que ingresaste ya existe en el sistema
-       </br> seras redireccionado automaticamente....</p></td>
+  <script>alert("el correo ya existe en el sistema");</script>
   </tr>
 </body>
 </html>
@@ -168,35 +128,15 @@ else{
                 <title>Skaters - Status</title>
                 <link rel="shortcut icon" href="'.$frontEndSketis.'Assets/icons/logo_header.png" />
                 <script>
-                        function r() { location.href="'.$frontEndSketis.'registro-almacenista.html"}
-                        setTimeout ("r()", 5000);
+                        function r() { location.href="'.$frontEndSketis.'registro-creador.html"}
+                        setTimeout ("r()", 0);
                         </script>
                 <style>
-                body{
-                    background-color: #00d27b;
-                    }
-                .okimage{
-                    display:block;
-                    margin-left: auto;
-                    margin-right: auto;
-                    margin-top: 200px;
-                    height: 200px;
-                    width: 200px;
-                }
-                .texto{
-                    text-align: center;
-                    font: oblique bold 120% cursive;
-                    font-size: 200%;
-                    color: #FFF;
-                }
+
                 </style>
         </head>
         <body>
-            <tr>
-                <td> <img class="okimage" src="'.$frontEndSketis.'Assets/icons/ok_icon.png"/> </td>
-                <td><p class="texto">Has registrado a un almacenista de manera exitosa!
-                </br> seras redireccionado automaticamente....</p></td>
-            </tr>
+
         </body>
     </html>
         ';

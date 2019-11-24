@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 24, 2019 at 11:34 PM
+-- Generation Time: Nov 25, 2019 at 12:25 AM
 -- Server version: 10.4.6-MariaDB-log
 -- PHP Version: 7.3.9
 
@@ -161,7 +161,7 @@ CREATE TABLE `t_usuario` (
 INSERT INTO `t_usuario` (`Usuario_ID`, `Nombre`) VALUES
 (1, 'Cliente'),
 (2, 'Administrador'),
-(3, 'Almacenista');
+(3, 'creador de contenido');
 
 -- --------------------------------------------------------
 
@@ -184,7 +184,7 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`Usuario_ID`, `Tipo_FK`, `Nombre`, `Apellido`, `Correo`, `Contrasena`, `Ultima_Conexion`) VALUES
-(1, 2, 'Alan Jesus', 'Lomeli', 'alomeligcia@gmail.com', 'clave', 1574634847),
+(1, 2, 'Alan Jesus', 'Lomeli', 'alomeligcia@gmail.com', 'clave', 1574637886),
 (2, 1, 'Doug Dimmadomme', 'Dueño del Domodimm', 'dougdim@gmail.com', 'clave', 0),
 (3, 3, 'Jose de Jesus', 'Jimenez Jara', 'josesito@gmail.com', 'clave', 0),
 (6, 1, 'Maria', 'Jimenez', 'a16100159@ceti.mx', '123', 0),
@@ -201,7 +201,12 @@ INSERT INTO `usuario` (`Usuario_ID`, `Tipo_FK`, `Nombre`, `Apellido`, `Correo`, 
 (17, 1, 'Ricardo ', 'Lopez', 'relg1999@gmail.com', '123', 0),
 (18, 1, 'Herbert', 'Jaime', 'herbert@hotmail.com', '1234', 0),
 (19, 1, 'Krozz', 'RDGZ', 'krozzimpulse@gmail.com', '12', 0),
-(20, 1, 'Coco', 'El matador', 'cocogaga@ceti.mx', 'ALVlaclase', 0);
+(20, 1, 'Coco', 'El matador', 'cocogaga@ceti.mx', 'ALVlaclase', 0),
+(26, 1, 'aaa', 'aaaa', 'ewew@gmail.com', '123', 0),
+(27, 1, 'aaa', 'asas', 'alomeligcia@gmail.comee', '123', 0),
+(28, 1, 'pepe', 'prueba', 'aass@gmail.com', '123', 0),
+(29, 1, 'grande', 'ariana', 'pepe@gmail.com', 'clave', 0),
+(30, 3, 'Alan', 'LOmeli', 'lomeli@gmail.com', '123', 0);
 
 --
 -- Indexes for dumped tables
@@ -297,7 +302,7 @@ ALTER TABLE `t_usuario`
 -- AUTO_INCREMENT for table `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `Usuario_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `Usuario_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- Constraints for dumped tables
