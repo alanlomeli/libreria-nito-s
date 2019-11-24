@@ -35,6 +35,13 @@
         <div class="articulo-texto">
             ${objeto[i].Nombre}
  </div>
+ <div class="articulo-texto">
+            AUTOR: ${objeto[i].Articulo}
+ </div>
+ <div class="articulo-texto">
+            EDITORIAL: ${objeto[i].Marca}
+ </div>
+
         <span >$${objeto[i].Precio}</span>
         <div class="icono-carrito"><img alt="shopping" src="Assets/icons/bookmark.png" class="shopping-icon" onclick="alcarro(${objeto[i].ID}, ${objeto[i].Precio})">        <span class="tooltipcarrito">Agregar al carrito</span>
         </div>
