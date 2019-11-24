@@ -4,10 +4,11 @@
 <head>
     <title>nito's</title>
     <script type="text/javascript" src="Assets/js/barnav.js"></script>
-    <link rel="shortcut icon" href="Assets/icons/logo_header.png"/>
+    <link rel="shortcut icon" href="Assets/icons/logo_header.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <link rel="stylesheet" type="text/css" href="articulos.css">
     <link href="Assets/Lato-font/Lato.css" rel="stylesheet">
+
 </head>
 
 <body>
@@ -21,7 +22,7 @@
     <script type="text/javascript">
         var objeto;
         const xhr = new XMLHttpRequest();
-        xhr.onload = function () {
+        xhr.onload = function() {
             //alert(this.responseText);
             console.log(this.responseText);
             objeto = JSON.parse(this.responseText);
@@ -29,15 +30,11 @@
             for (let i = 0; i < objeto.length; i++) {
                 document.getElementById("insertar-articulos").innerHTML += `
 <div class="articulo">
-<img class="foto-autor" src="Assets/img/${objeto[i].Foto}">
-
+        <img class="articulo-img" src="../nitos/Assets/img/${objeto[i].Foto}" alt="Libro bonito">
         <div class="articulo-texto">
-        <strong>nombre:</strong>
             ${objeto[i].Nombre}
  </div>
-  <div class="articulo-texto">
-          <strong>descripci&oacute;n:</strong>
-
+ <div class="articulo-texto">
             ${objeto[i].Descripcion}
  </div>
         </div>
@@ -46,14 +43,26 @@
             }
         };
         var fd = new FormData();
-        fd.append("tipo", "3");
-        xhr.open("POST", backendSketis + "autores.php", true);
-        xhr.withCredentials = true;
+
+        xhr.open("POST", "../nitosback/obtenerAutores.php", true);
+        xhr.withCredentials=true;
         xhr.send(fd);
 
-
+        function alcarro(ID, Precio) {
+            const xhc = new XMLHttpRequest();
+            var respuesta;
+            xhc.onload = function() {
+                respuesta = JSON.parse(this.responseText);
+            };
+            var fd = new FormData();
+            fd.append("Add", ID);
+            fd.append("Precio", Precio);
+            xhc.open("POST", backendSketis+"carro.php", true);
+            xhc.withCredentials=true;
+            xhc.send(fd);
+        }
     </script>
-</div>
+
 </body>
 
 </html>
