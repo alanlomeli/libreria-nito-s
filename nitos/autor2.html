@@ -15,10 +15,11 @@
 
 <div id="insertar-barra"></div>
 
-<div style="text-align: center; color:#faaf18"><h1>descubre a nuestros reconocidos autores</h1><br></div>
+<div style="text-align: center; color:#faaf18"><h1>nuestra selecci&oacute;n de libros</h1><br></div>
 
 
 <div class="articulos" id="insertar-articulos">
+
     <script type="text/javascript">
         var objeto;
         const xhr = new XMLHttpRequest();
@@ -29,24 +30,27 @@
 
             for (let i = 0; i < objeto.length; i++) {
                 document.getElementById("insertar-articulos").innerHTML += `
-<div class="articulo" id="autor">
-       <a href="autor${i+1}.html">
-       <img class="articulo-img" class="autor-img" src="../nitos/Assets/img/${objeto[i].Foto}" alt="autor bonito">
-       </a>
+<div class="articulo" >
+        <img class="articulo-img" src="../nitos/Assets/img/${objeto[i].Foto}" alt="Libro bonito">
         <div class="articulo-texto">
             ${objeto[i].Nombre}
  </div>
  <div class="articulo-texto">
-            ${objeto[i].Descripcion}
+            AUTOR: ${objeto[i].Articulo}
  </div>
+ <div class="articulo-texto">
+            EDITORIAL: ${objeto[i].Marca}
+ </div>
+
+        <span >$${objeto[i].Precio}</span>
+        <div class="icono-carrito"><img alt="shopping" src="Assets/icons/bookmark.png" class="shopping-icon" onclick="alcarro(${objeto[i].ID}, ${objeto[i].Precio})">        <span class="tooltipcarrito">Agregar al carrito</span>
         </div>
     </div>
 `;
             }
         };
         var fd = new FormData();
-
-        xhr.open("POST", "../nitosback/obtenerAutores.php", true);
+        xhr.open("POST", "../nitosback/obtenerProductos2.php", true);
         xhr.withCredentials=true;
         xhr.send(fd);
 
@@ -64,9 +68,7 @@
             xhc.send(fd);
         }
     </script>
-
 </div>
-
 </body>
 
 </html>
