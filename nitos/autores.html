@@ -26,7 +26,9 @@
             //alert(this.responseText);
             console.log(this.responseText);
             objeto = JSON.parse(this.responseText);
-
+            var datos = [];
+            datos[1] = "https://es.wikipedia.org/wiki/Gabriel_Garc%C3%ADa_M%C3%A1rquez";
+            datos[2] = "https://es.wikipedia.org/wiki/Charles_Dickens";
             for (let i = 0; i < objeto.length; i++) {
                 document.getElementById("insertar-articulos").innerHTML += `
 <div class="articulo" id="autor">
@@ -37,7 +39,9 @@
             ${objeto[i].Nombre}
  </div>
  <div class="articulo-texto">
+ <a href="${datos[i+1]}">
             ${objeto[i].Descripcion}
+            </a>
  </div>
         </div>
     </div>

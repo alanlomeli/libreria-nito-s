@@ -22,6 +22,8 @@
 
 
 <!-- Cabeza, botones -->
+<!-- hitwebcounter Code START -->
+<script type="text/javascript" src="//counter.websiteout.net/js/3/5/0/0"></script>
 
 <!-- Portafolio de WRAPs -->
 <div id="wrapper-container">
@@ -91,7 +93,21 @@
 <!-- Pie De Pagina -->
 <div id="wrapper-thank">
   <div class="thank">
-    <div style="text-align: center;"><h1 style="color:#e65c23;">gracias por su visita</h1></div>
+    <div style="text-align: center;">
+      <h1 style="color:#e65c23;">gracias por su visita</h1>
+      <br>
+      <h3>Ultima actualizacion de informacion</h3>
+      <h3 id="date"></h3>
+
+      <script>
+        var d = new Date(2019, 11, 24);
+        var date = "";
+        date += d.getDate() + "/";
+        date += d.getMonth() + "/";
+        date += d.getFullYear();
+        document.getElementById("date").innerHTML = date;
+      </script>
+    </div>
   </div>
 </div>
 
