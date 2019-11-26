@@ -96,17 +96,15 @@ case "DeBolsillo":
                         break;
 
 }
-
+print $articulo;
 switch ($articulo){
-    case "Llantas":
+    case "Gabriel Garcia Marquez":
         $articuloFK = 1;
         break;
-    case "Trucks":
+    case "Charles John Huffam Dickens":
         $articuloFK = 2;
         break;
-    case "Tablas":
-        $articuloFK = 3;
-        break;
+
 }
 
 $consulta = mysqli_query($conexion,
@@ -122,35 +120,12 @@ echo '
             <title>Skaters - ok</title>
             <link rel="shortcut icon" href="'.$frontEndSketis.'Assets/icons/logo_header.png" />
             <script>
-                    function r() { location.href="'.$frontEndSketis.'skaters/registro-articulos.html"}
-                    setTimeout ("r()", 3200);
+                    function r() { location.href="'.$frontEndSketis.'registro-articulos.html"}
+                    setTimeout ("r()", 0);
                     </script>
-            <style>
-            body{
-                background-color: #00d27b;
-                }
-            .okimage{
-                display:block;
-                margin-left: auto;
-                margin-right: auto;
-                margin-top: 200px;
-                height: 200px;
-                width: 200px;
-            }
-            .texto{
-                text-align: center;
-                font: oblique bold 120% cursive;
-                font-size: 200%;
-                color: #FFF;
-            }
-            </style>
+
     </head>
-    <body>
-        <tr>
-            <td> <img class="okimage" src="'.$frontEndSketis.'Assets/icons/ok_icon.png"/> </td>
-            <td><p class="texto">Producto registrado con exito! - seras redireccionado automaticamente....</p></td>
-        </tr>
-    </body>
+
 </html>
 ';
 
